@@ -1,7 +1,7 @@
 server '128.199.70.207', user: 'root', roles: %w{web app db}
 set :application, 'tripcanvas_hotels'
 set :rails_env, 'staging'
-set :branch, 'develop'
+set :branch, 'master'
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
