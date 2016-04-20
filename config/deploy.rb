@@ -4,6 +4,13 @@ lock '3.4.0'
 set :application, 'tripcanvas_hotels'
 set :repo_url, 'git@github.com:kylefoo/tripcanvas_hotels.git'
 
+set :rbenv_custom_path, '~/.rbenv'
+set :rbenv_type, :system
+set :rbenv_ruby, '2.2.3'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -21,10 +28,6 @@ set :repo_url, 'git@github.com:kylefoo/tripcanvas_hotels.git'
 
 # Default value for :pty is false
 # set :pty, true
-
-# deploy.rb or stage file (staging.rb, production.rb or else)
-set :rvm_type, :user                     # Defaults to: :auto
-set :rvm_ruby_version, '2.0.0-p247'      # Defaults to: 'default'
 
 # Default value for :linked_files is []
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
