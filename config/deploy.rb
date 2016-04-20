@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'tripcanvas_hotels'
-set :repo_url, 'git@github.com:kylefoo/my_repo.git'
+set :repo_url, 'git@github.com:kylefoo/tripcanvas_hotels.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -32,7 +32,7 @@ set :repo_url, 'git@github.com:kylefoo/my_repo.git'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
 

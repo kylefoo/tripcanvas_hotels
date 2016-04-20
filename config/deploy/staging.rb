@@ -32,7 +32,7 @@ server '128.199.70.207', user: 'root', roles: %w{web app db}
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-
+set :application, 'tripcanvas_hotels'
 
 
 # Custom SSH Options
