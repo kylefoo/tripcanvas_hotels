@@ -1,5 +1,7 @@
+server '128.199.70.207', user: 'root', roles: %w{web app db}
+set :application, 'tripcanvas_hotels'
 set :rails_env, 'staging'
-
+set :branch, 'develop'
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -8,7 +10,6 @@ set :rails_env, 'staging'
 # server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
-server '128.199.70.207', user: 'root', roles: %w{web app db}
 
 
 # role-based syntax
@@ -32,7 +33,7 @@ server '128.199.70.207', user: 'root', roles: %w{web app db}
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-set :application, 'tripcanvas_hotels'
+
 
 
 # Custom SSH Options
