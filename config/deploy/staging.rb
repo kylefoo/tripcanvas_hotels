@@ -1,4 +1,4 @@
-server '128.199.70.207', user: 'deploy', roles: %w{web app db}
+server '128.199.70.207', user: 'root', roles: %w{web app db}
 set :application, 'tripcanvas_hotels'
 set :rails_env, 'staging'
 set :branch, 'master'
