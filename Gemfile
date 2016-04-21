@@ -54,7 +54,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-gitflow', git: 'git@github.com:YotpoLtd/capistrano-gitflow.git'
   gem 'capistrano-faster-assets', '~> 1.0'
-  gem 'capistrano-passenger', '0.2.0'
+  gem 'capistrano-unicorn', require: false
   gem 'capistrano-rails-console'
   gem 'capistrano-rails-tail-log'
   gem 'capistrano-db-tasks', require: false
