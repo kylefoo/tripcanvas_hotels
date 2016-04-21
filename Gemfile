@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'pg'
 
 #defaults
+gem 'bundler'
 gem 'rails', '4.2.5.2'
+gem 'sprockets'
+gem 'sprockets-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -31,6 +34,10 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :staging, :test do
+  
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -45,5 +52,11 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv'
+  gem 'capistrano-gitflow', git: 'git@github.com:YotpoLtd/capistrano-gitflow.git'
+  gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'capistrano-passenger', '0.2.0'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-rails-tail-log'
+  gem 'capistrano-db-tasks', require: false
 end
 

@@ -15,7 +15,7 @@ Rails.application.configure do
   config.assets.debug = true
   config.assets.raise_runtime_errors = true
   # config.action_mailer.default_url_options = { host: 'www.tourplus.xyz' } 
-  config.action_controller.asset_host = ""
+  config.action_controller.asset_host = "128.199.70.207"
   config.force_ssl = true
   # Don't care if the mailer can't send.
   config.action_mailer.default_url_options = { host: '128.199.70.207'}
