@@ -35,7 +35,7 @@ gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 
 group :staging, :test do
-  
+  gem 'passenger', '5.0.11'
 end
 
 group :development, :test do
@@ -54,7 +54,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-gitflow', git: 'git@github.com:YotpoLtd/capistrano-gitflow.git'
   gem 'capistrano-faster-assets', '~> 1.0'
-  gem 'capistrano-unicorn', require: false
+  gem 'capistrano-passenger', '0.2.0'
   gem 'capistrano-rails-console'
   gem 'capistrano-rails-tail-log'
   gem 'capistrano-db-tasks', require: false
