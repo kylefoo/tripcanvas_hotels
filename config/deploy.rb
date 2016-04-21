@@ -1,6 +1,5 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
-require 'capistrano-unicorn'
 
 set :application, 'tripcanvas_hotels'
 set :repo_url, 'git@github.com:kylefoo/tripcanvas_hotels.git'
