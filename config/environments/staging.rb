@@ -14,7 +14,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.assets.debug = true
   config.assets.raise_runtime_errors = true
-  # config.action_mailer.default_url_options = { host: 'www.tourplus.xyz' } 
   config.action_controller.asset_host = "128.199.70.207"
   config.force_ssl = false
   # Don't care if the mailer can't send.
