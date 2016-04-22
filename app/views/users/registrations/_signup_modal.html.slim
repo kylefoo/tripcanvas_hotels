@@ -1,0 +1,27 @@
+/! sign up modal
+.modal--sign_up.modal.fade role="dialog"
+  .modal-dialog
+    .modal-content
+      .modal-body
+        button.close data-dismiss='modal' &times;
+        .container
+          .modal__header
+            h2.h2--title
+              = t 'signup.title'
+            p.lead.text-center
+              = t 'signup.sub_title' 
+        .row.row-sm-offset-3.space.xs
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            .input-group
+              = f.email_field :email,required: true, class: 'form-control', placeholder:t('email')
+            .input-group
+              = f.password_field :password, autocomplete: "off",required: true, class: 'form-control', placeholder: t('password')
+            .input-group
+              = f.password_field :password_confirmation, autocomplete: "off",required: true, class: 'form-control', placeholder:t('confirm_password'), required: true
+            = devise_error_messages!
+            p.text-justify.small = t 'login.justify'
+            .form-group
+              = f.submit t('nav.signup'), class: 'btn btn--session btn__message'
+              = link_to t('signup.switch_login'), new_session_path(resource_name), id: 'login_modal', style: "outline: 0px;"
+              / = link_to t('signup.switch_login'), '#', id: 'login_modal', data: { dismiss: 'modal', toggle: 'modal', target: '.modal--login' }, style: "outline: 0px;"
+          

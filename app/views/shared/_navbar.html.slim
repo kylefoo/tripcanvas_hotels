@@ -1,0 +1,36 @@
+//for landing page only
+.navbar.navbar-default.transparent role="navigation"
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to root_path, class: 'navbar-brand visible-xs' do
+        = image_tag('http://placehold.it/30x30')
+      = link_to root_path, class: 'navbar-brand-naked hidden-xs ' do
+        = image_tag('http://placehold.it/200x60?text=Tripcanvas')
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.visible-xs
+        - unless user_signed_in?
+        - if user_signed_in?
+          li = link_to t('nav.logout'), destroy_user_session_path, method: :delete
+        - else
+          li = link_to t('nav.signup'), '#', data: { toggle: 'modal', target: '.modal--sign_up' }
+          li = link_to t('nav.login'), '#', data: { toggle: 'modal', target: '.modal--login' }
+      .pull-left.hidden-xs style=('display:inline-block;')
+        ul.nav.navbar-nav
+      .pull-right.hidden-xs style=('display:inline-block;')
+        ul.nav.navbar-nav
+          - if user_signed_in?
+            li 
+              a.dropdown.dropdown-toggle.link-contrast data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"
+                = image_tag('http://placehold.it/30x30', class: 'img-circle img-circle-white avatar avatar-original', style: 'width: 30px; height: 30px;')
+                |  #{current_user.email}
+                i.fa.fa-caret-down
+              ul.dropdown-menu.pull-right role="menu"
+                li = link_to t('nav.logout'), destroy_user_session_path, method: :delete, class: 'dove'
+          - else
+            li = link_to t('nav.signup'), '#', data: { toggle: 'modal', target: '.modal--sign_up' }, class: "dropdown"
+            li = link_to t('nav.login'), '#', data: { toggle: 'modal', target: '.modal--login' }, class: "dropdown"
