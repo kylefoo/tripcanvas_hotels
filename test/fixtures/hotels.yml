@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  city_id: 1
+  aasm: MyString
+  slug: MyString
+  description: MyText
+  address: MyString
+
+two:
+  name: MyString
+  city_id: 1
+  aasm: MyString
+  slug: MyString
+  description: MyText
+  address: MyString

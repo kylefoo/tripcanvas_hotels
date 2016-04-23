@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :hotels
   resources :countries
   resources :cities
   devise_for :users

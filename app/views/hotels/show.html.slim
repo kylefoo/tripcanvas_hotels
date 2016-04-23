@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @hotel.name
+p
+  strong City:
+  = @hotel.city_id
+p
+  strong Aasm:
+  = @hotel.aasm
+p
+  strong Slug:
+  = @hotel.slug
+p
+  strong Description:
+  = @hotel.description
+p
+  strong Address:
+  = @hotel.address
+
+= link_to 'Edit', edit_hotel_path(@hotel)
+'|
+= link_to 'Back', hotels_path
