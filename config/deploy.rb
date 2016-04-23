@@ -10,7 +10,8 @@ set :rbenv_ruby, '2.3.0'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
-set :normalize_asset_timestamps, false
+# set :normalize_asset_timestamps, false
+#set :normalize_asset_timestamps, %{public/images public/javascripts public/stylesheets}
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -51,14 +52,6 @@ namespace :deploy do
       #   execute :rake, 'cache:clear'
       # end
     end
-  end
-
-  task :fix_absent_manifest_bug do
-    on roles(:web) do
-      within release_path do  execute :touch,
-        release_path.join('public', fetch(:assets_prefix), 'manifest-fix.temp')
-      end
-   end
   end
 
   after :updating, 'deploy:fix_absent_manifest_bug'
