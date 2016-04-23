@@ -66,34 +66,12 @@ $color-dove-gray: #707070;
             }
         }
     }
-    .btn-trip {
-        margin: 14px 15px 0px 15px;
-        transition: all 0.2s ease-in-out 0s;
-        border-radius: 4px;
-        padding: 11px 25px;
-        display: inline-block;
-        background: transparent none repeat scroll 0% 0%;
-        font-size: 13px;
-        font-weight: bold;
-        &:hover {
-            background-color: $secondary;
-            color: white;
-            border: 2px solid $secondary;
-        }
-        // &.dove {
-        //     color: $color-dove-gray;
-        //     &:hover {
-        //         background-color: $secondary;
-        //         color: white;
-        //     }
-        // }
-    }
     .navbar-brand {
         padding-top: 5px;
         padding-bottom: 40px;
       img {
         display: block;
-        width: 150px;
+        width: 50px;
       }
     }
     .navbar-form {

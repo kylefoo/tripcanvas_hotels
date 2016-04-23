@@ -4,32 +4,31 @@
     .modal-content
       .modal-body
         button.close data-dismiss='modal' &times;
-        .container
-          .modal__header
-            h2.h2--title
-              = t 'login.title'
-            p.lead.text-center
-              = t 'login.sub_title'
+        .modal__header
+          h2.text-center
+            | Tripcanvas
+          p.lead.text-center
+            | Hotel Listing
         .row.row-sm-offset-3.space.xs.modal__input
-          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = form_for(resource, as: resource_name, url: new_user_session_path(resource_name)) do |f|
             .input-group.input--container.space.xs
             span.help-block
             .input-group.input--container  
-              = f.email_field :email, autofocus: true, class: 'form-control', placeholder: t('email')
+              = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
             span.help-block
             .input-group.input--container
-              = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: t('password'), autocomplete: "off"
+              = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password', autocomplete: "off"
             - if devise_mapping.rememberable?
               .field.space.xs
                 = f.check_box :remember_me
                 |  
-                = f.label t('user.remember_me')
+                = f.label 'Remember Me'
             .actions.space.xs
-              = f.submit t('login.title'), class: 'btn btn--session btn__message'
+              = f.submit 'Login', class: 'btn btn-success'
         .row.row-sm-offset-3
           span.help-block.text-centre.space.xs
             - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-              = link_to t('user.forget_password'), new_password_path(resource_name)
+              = link_to 'Forget Password?', new_password_path(resource_name)
           span.help-block.text-centre.space.xs
-            = link_to t('login.switch_signup'), new_registration_path(resource_name), id: 'signup_modal', style: "outline: 0px;"
+            = link_to 'Not Member?', new_registration_path(resource_name), id: 'signup_modal', style: "outline: 0px;"
           / = link_to t('login.switch_signup'), '#', id: 'signup_modal', data: { dismiss: 'modal', toggle: 'modal', target: '.modal--sign_up' }, style: "outline: 0px;"

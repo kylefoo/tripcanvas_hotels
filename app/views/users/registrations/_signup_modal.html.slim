@@ -4,12 +4,11 @@
     .modal-content
       .modal-body
         button.close data-dismiss='modal' &times;
-        .container.sign_up--container
-          .modal__header
-            h2.h2--title
-              | Tripcanvas
-            p.lead.text-center
-              | Hotel Listing
+        .modal__header
+          h2.h2--title
+            | Tripcanvas
+          p.lead.text-center
+            | Hotel Listing
         .row.row-sm-offset-3.space.xs.modal__input
           = form_for(resource, as: resource_name, url: new_user_registration_path(resource_name)) do |f|
             / = f.hidden_field :referrer_id, value: session[:referrer_id]
