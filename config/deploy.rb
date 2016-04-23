@@ -54,6 +54,4 @@ namespace :deploy do
     end
   end
 
-  after :updating, 'deploy:fix_absent_manifest_bug'
-
 end
