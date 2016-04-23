@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @city.name
+p
+  strong Country:
+  = @city.country_id
+p
+  strong Status:
+  = @city.status
+p
+  strong Slug:
+  = @city.slug
+p
+  strong Description:
+  = @city.description
+
+= link_to 'Edit', edit_city_path(@city)
+'|
+= link_to 'Back', cities_path

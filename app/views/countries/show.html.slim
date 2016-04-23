@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @country.name
+p
+  strong Country:
+  = @country.country_id
+p
+  strong Status:
+  = @country.status
+p
+  strong Slug:
+  = @country.slug
+p
+  strong Description:
+  = @country.description
+
+= link_to 'Edit', edit_country_path(@country)
+'|
+= link_to 'Back', countries_path
