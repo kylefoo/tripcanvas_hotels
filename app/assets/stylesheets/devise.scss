@@ -1,0 +1,190 @@
+.modal__header {
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    p {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 0px;
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+}
+
+.modal__input {
+    .input-group.i {
+        width: 2em;
+    }  
+    .input-group .form-control {
+        height: 40px;
+        background-color: #eeeeee;
+        border-radius: 5px;
+        border: 0px;
+    }
+    .help-block {
+        color: red;
+    }
+    p{
+        color: #707070;
+    }
+
+    //change color of placeholder
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    #707070;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       color:    #707070;
+       opacity:  1;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+       color:    #707070;
+       opacity:  1;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color:    #707070;
+    }
+}
+
+.modal__socialButtons {
+    a {
+        color: white; // In yourUse @body-bg
+        opacity: 0.9;
+    }
+    a:hover {
+        color: white;
+        opacity: 1;
+    }
+    .btn-facebook {
+        background: #3b5998;
+    }
+    .btn-twitter {
+        background: #00aced;
+    }
+    .btn-google {
+        background: #c32f10;
+    }
+} 
+
+// login modal
+.modal--login{
+    margin-right: 0 !important;
+    .modal-dialog{
+        width: 400px;
+        margin: 70px auto;
+    }
+    .login--container{
+        width: 100%;
+    }
+    .row-sm-offset-3{
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: center;
+    }
+    .spanOr{
+        font-size: 14px;
+        color: #707070;
+    }
+    .btn__message{
+        border-radius: 30px;
+        background-color: #3b73a8;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .modal-dialog{
+            width: 400px;
+            margin-top: 70px;
+        }
+
+        .forgotPwd {
+            text-align: right;
+            margin-top: 10px;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        width: 100%;
+        margin: 0px auto;
+        .modal-dialog {
+            width: 100%;
+            margin-top: 0px;
+        }
+    }
+    @media only screen and (max-width: 767px) and (orientation: portrait) {
+        width: 100%;
+        // margin: 30px auto;
+        margin: auto;
+        .modal-dialog{
+            width: 100%;
+            margin-top: 0px;
+        }
+    }
+}
+
+// sign up modal
+.modal--sign_up {
+    margin-right: 0 !important;
+    .modal-dialog {
+        width: 400px;
+        margin: 70px auto;
+    }
+    .sign_up--container {
+        width: 100%;
+    }
+    .row-sm-offset-3 {
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: center;
+    }
+    .spanOr {
+        font-size: 14px;
+        color: #707070;
+    }
+    .btn__message {
+        border-radius: 30px;
+        background-color: #3b73a8;
+        margin-bottom: 10px;
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .modal-dialog{
+            width: 400px;
+            margin-top: 70px;
+        }
+
+        .forgotPwd {
+            text-align: right;
+            margin-top: 10px;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        width: 100%;
+        margin: 0px auto;
+        .modal-dialog{
+            width: 100%;
+            margin-top: 0px;
+        }
+    }
+    @media only screen and (max-width: 767px) and (orientation: portrait) {
+        width: 100%;
+        // margin: 30px auto;
+        margin: auto;
+        .modal-dialog{
+            width: 100%;
+            margin-top: 0px;
+        }
+    }
+}
+
+.help-block p {
+    font-size: 14px;
+    color: #999999;
+    font-weight: 400;
+}
+
+.input--container {
+    width: 100%;
+}
