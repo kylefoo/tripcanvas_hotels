@@ -1,7 +1,8 @@
 class Hotel < ActiveRecord::Base
-  include AASM
   belongs_to :provider
 
+  include AASM
+  field :aasm_state
   aasm do
     state :pending, initial: true
     state :approved
