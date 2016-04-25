@@ -10,8 +10,7 @@
           p.lead.text-center
             | Hotel Listing
         .row.row-sm-offset-3.space.xs.modal__input
-          = form_for(resource, as: resource_name, url: new_user_registration_path(resource_name)) do |f|
-            / = f.hidden_field :referrer_id, value: session[:referrer_id]
+          = form_for(resource, as: resource_name, url: user_registration_path) do |f|
             span.help-block
             .input-group.input--container
               / = f.text_field :name, autofocus: true, required: true, class: 'form-control', placeholder: "Name"

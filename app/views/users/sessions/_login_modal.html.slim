@@ -10,7 +10,7 @@
           p.lead.text-center
             | Hotel Listing
         .row.row-sm-offset-3.space.xs.modal__input
-          = form_for(resource, as: resource_name, url: new_user_session_path(resource_name)) do |f|
+          = form_for(resource, as: resource_name, url: user_session_path) do |f|
             .input-group.input--container.space.xs
             span.help-block
             .input-group.input--container  
