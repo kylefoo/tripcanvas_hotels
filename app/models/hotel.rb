@@ -1,4 +1,5 @@
 class Hotel < ActiveRecord::Base
+  include AASM
   belongs_to :provider
 
   aasm do
