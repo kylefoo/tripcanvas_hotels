@@ -31,7 +31,7 @@ gem 'devise'
 #Utilities
 gem 'enumerize'
 gem 'friendly_id', '~> 5.1.0'
-gem 'aasm'
+gem 'aasm', '4.10.0'
 gem 'simple_form'
 
 # Use ActiveModel has_secure_password

@@ -3,6 +3,4 @@ class Provider < User
 
   has_many :hotels
 
-  include AASM
-  
 end
