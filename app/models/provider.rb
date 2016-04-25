@@ -4,6 +4,5 @@ class Provider < User
   has_many :hotels
 
   include AASM
-  field :aasm_state
-
+  
 end

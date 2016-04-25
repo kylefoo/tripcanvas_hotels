@@ -1,11 +1,6 @@
-class Provider::HotelsController < ApplicationController
+class Provider::HotelsController < Provider::BaseController
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
 
-  def new
-    @hotel = Hotel.new
-  end
-
-  # GET /hotels/new
   def new
     @hotel = Hotel.new
   end
@@ -20,8 +15,8 @@ class Provider::HotelsController < ApplicationController
   # POST /hotels
   # POST /hotels.json
   def create
-    @hotel = Hotel.new(hotel_params)
-
+    @hotel = @provider.hotels.new(hotel_params)
+    
     respond_to do |format|
       if @hotel.save
         format.html { redirect_to @hotel, notice: 'Hotel was successfully created.' }
@@ -60,7 +55,7 @@ class Provider::HotelsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hotel
-      @hotel = Hotel.find(params[:id])
+      @hotel = @provider.hotels.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

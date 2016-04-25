@@ -2,8 +2,7 @@ class Hotel < ActiveRecord::Base
   belongs_to :provider
 
   include AASM
-  field :aasm_state
-  aasm do
+  aasm :column => 'aasm' do
     state :pending, initial: true
     state :approved
     state :declined

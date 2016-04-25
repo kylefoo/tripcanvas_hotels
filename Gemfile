@@ -23,6 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'slim-rails'
 gem 'font-awesome-rails', '~> 4.4.0'
+gem 'growlyflash', '~> 0.6.0'
 
 # authentication
 gem 'devise'
