@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  resources :hotels
-  resources :countries
-  resources :cities
+  root to: 'pages#index'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  root to: 'pages#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -15,7 +13,19 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :users
+  # resources :users
+  resources :hotels, only: [:index, :show]
+  resources :countries, only: [:index, :show]
+  resources :cities, only: [:index, :show]
+
+  namespace :provider do
+    resources :hotels, only: [:index, :create, :new, :edit, :update, :destroy]
+  end
+
+  namespace :admin do
+    resources :cities, only: [:index, :create, :new, :edit, :update, :destroy]
+    resources :countries, only: [:index, :create, :new, :edit, :update, :destroy]
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
