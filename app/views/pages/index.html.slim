@@ -1,9 +1,11 @@
 .container
-	| This is tripcanvas hotel page
-	p
-	| hi
-	p
-	- if user_signed_in?
-	  | #{current_user.email}
-	- else 
-	  | please sign in
+  | Hi there,
+  p
+  - if user_signed_in? && current_user.provider?
+    | #{current_user.email}
+    p
+    = link_to "Create New Hotel", new_provider_hotel_path
+    br
+    = link_to "All Hotels", hotels_path
+  - else 
+    = link_to "All Hotels", hotels_path
