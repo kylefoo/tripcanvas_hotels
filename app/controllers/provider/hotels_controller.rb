@@ -3,6 +3,8 @@ class Provider::HotelsController < Provider::BaseController
 
   def new
     @hotel = Hotel.new
+    @cities = City.all
+    @countries = Country.all
   end
 
   # GET /hotels/1/edit
