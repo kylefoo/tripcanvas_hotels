@@ -19,5 +19,11 @@
   .field
     = f.input :description, as: :text
   .field
-    = f.input :address
+    = f.input :address, as: :url
+  .field
+    = f.input :phone_no, as: :tel, placeholder: '+1 (234) 567 890'
+  .field
+    = f.input :website, placeholder: 'http://'
+  .field
+    = f.input :email, as: :email
   .actions = f.button :submit

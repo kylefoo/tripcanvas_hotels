@@ -9,6 +9,9 @@ table
       th Slug
       th Description
       th Address
+      th Phone No
+      th Website
+      th Email
       th
       th
       th
@@ -22,6 +25,9 @@ table
         td = hotel.slug
         td = hotel.description
         td = hotel.address
+        td = hotel.phone_no
+        td = hotel.website
+        td = hotel.email
         td = link_to 'Show', hotel
         td = link_to 'Edit', edit_provider_hotel_path(hotel)
         td = link_to 'Destroy', hotel, data: {:confirm => 'Are you sure?'}, :method => :delete
