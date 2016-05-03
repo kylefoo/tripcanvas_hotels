@@ -1,6 +1,10 @@
 class Provider::HotelsController < Provider::BaseController
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @hotels = @provider.hotels
+  end
+
   def new
     @hotel = Hotel.new
     @cities = City.all

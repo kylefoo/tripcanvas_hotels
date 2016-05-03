@@ -1,0 +1,31 @@
+h1 My hotels
+
+table
+  thead
+    tr
+      th Name
+      th City
+      th Aasm
+      th Slug
+      th Description
+      th Address
+      th
+      th
+      th
+
+  tbody
+    - @hotels.each do |hotel|
+      tr
+        td = hotel.name
+        td = hotel.city_id
+        td = hotel.aasm
+        td = hotel.slug
+        td = hotel.description
+        td = hotel.address
+        td = link_to 'Show', hotel
+        td = link_to 'Edit', edit_provider_hotel_path(hotel)
+        td = link_to 'Destroy', hotel, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Hotel', new_provider_hotel_path
