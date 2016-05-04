@@ -37,6 +37,11 @@ gem 'simple_form'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# js-assets
+source 'https://rails-assets.org' do
+  gem 'rails-assets-lightgallery'
+end
+
 group :staging, :test do
   gem 'passenger', '5.0.11'
 end

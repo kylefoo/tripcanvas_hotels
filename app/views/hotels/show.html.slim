@@ -1,24 +1,53 @@
+
+header#js-carousel_service.js-carousel.carousel.slide data-ride="carousel" data-interval="false" style="height: 450px;"
+  .carousel-inner
+    .item.active data-src='http://placehold.it/480x240' 
+      = link_to image_path('http://placehold.it/480x240') do
+        .fill style="background-image:url('http://placehold.it/480x240');"
+    .item data-src='http://placehold.it/480x240' 
+      = link_to image_path('http://placehold.it/480x240') do
+        .fill style="background-image:url('http://placehold.it/480x240');"
+  = link_to '#', data: { slide: 'prev', target: '#js-carousel_service' }, class: 'carousel-control left' do
+    span.glyphicon.glyphicon-chevron-left
+  = link_to '#', data: { slide: 'next', target: '#js-carousel_service' }, class: 'carousel-control right' do
+    span.glyphicon.glyphicon-chevron-right
 p#notice = notice
 
-p
-  strong Name:
-  = @hotel.name
-p
-  strong City:
-  = @hotel.city_id
-p
-  strong Aasm:
-  = @hotel.aasm
-p
-  strong Slug:
-  = @hotel.slug
-p
-  strong Description:
-  = @hotel.description
-p
-  strong Address:
-  = @hotel.address
+.container
+  .row
+    .col-sm-6
+      strong Name:
+      = @hotel.name
+    .col-sm-6
+      strong City:
+      = @hotel.city_id
+  .row
+    .col-sm-6
+      strong Phone:
+      = @hotel.phone_no
+    .col-sm-6
+      strong Slug:
+      = @hotel.slug
+  .row
+    .col-sm-6
+      strong Description:
+      = @hotel.description
+    .col-sm-6
+      strong Address:
+      = @hotel.address
+  .row
+    .col-sm-6
+      strong Email:
+      = @hotel.email
+    .col-sm-6
+      strong Website:
+      = @hotel.website
 
 = link_to 'Edit', edit_provider_hotel_path(@hotel)
 '|
 = link_to 'Back', hotels_path
+
+javascript:
+  $('.carousel-inner').lightGallery({
+    selector: '.item'
+  });
