@@ -7,9 +7,9 @@
           li = message
 
   .field
-    = f.input :name
+    = f.input :name, required: true
   .field
-    = f.input :city_id, collection: @cities
+    = f.input :city_id, collection: @cities, required: true
   / .field
   /   = f.label :aasm
   /   = f.text_field :aasm
@@ -19,11 +19,19 @@
   .field
     = f.input :description, as: :text
   .field
-    = f.input :address, as: :url
+    = f.input :address, as: :url, required: true
   .field
-    = f.input :phone_no, as: :tel, placeholder: '+1 (234) 567 890'
+    = f.input :phone_no, as: :tel, required: true, placeholder: '+1 (234) 567 890'
   .field
     = f.input :website, placeholder: 'http://'
   .field
     = f.input :email, as: :email
+  .field
+    = f.input :image, as: :file
+  - if @hotel.image_data?
+    .field
+      = image_tag @book.image_url(:thumb)
+    .field
+      | Remove attachment: 
+      = f.input :remove_image, required: true, as: :check_boxes
   .actions = f.button :submit

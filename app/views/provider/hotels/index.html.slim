@@ -30,7 +30,7 @@ table
         td = hotel.email
         td = link_to 'Show', hotel
         td = link_to 'Edit', edit_provider_hotel_path(hotel)
-        td = link_to 'Destroy', hotel, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Destroy', provider_hotel_path(hotel), data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 

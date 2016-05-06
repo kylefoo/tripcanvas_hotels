@@ -34,6 +34,12 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'aasm', '4.10.0'
 gem 'simple_form'
 
+#
+gem 'fastimage'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'shrine'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
