@@ -1,4 +1,4 @@
-h1 Listing hotels
+h1 All hotels
 
 table
   thead
@@ -29,9 +29,9 @@ table
         td = hotel.website
         td = hotel.email
         td = link_to 'Show', hotel
-        td = link_to 'Edit', edit_provider_hotel_path(hotel)
-        td = link_to 'Destroy', hotel, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
+= link_to 'My Hotel', provider_hotels_path
+br
 = link_to 'New Hotel', new_provider_hotel_path

@@ -1,9 +1,9 @@
 
 header#js-carousel_service.js-carousel.carousel.slide data-ride="carousel" data-interval="false" style="height: 450px;"
   .carousel-inner
-    .item.active data-src='http://placehold.it/480x240' 
-      = link_to image_path('http://placehold.it/480x240') do
-        .fill style="background-image:url('http://placehold.it/480x240');"
+    .item.active data-src='#{@hotel.image_url(:original)}' 
+      = link_to image_path(@hotel.image_url(:original)) do
+        .fill style="background-image:url('#{@hotel.image_url(:original)}');"
     .item data-src='http://placehold.it/480x240' 
       = link_to image_path('http://placehold.it/480x240') do
         .fill style="background-image:url('http://placehold.it/480x240');"

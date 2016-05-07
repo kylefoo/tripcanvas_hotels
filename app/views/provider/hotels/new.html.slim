@@ -1,6 +1,6 @@
 .container style="width: 450px"
   .page-container-responsive
     h1 New hotel
-    == render 'form'
+    == render 'form', path: provider_hotels_path
 
     = link_to 'Back', provider_hotels_path

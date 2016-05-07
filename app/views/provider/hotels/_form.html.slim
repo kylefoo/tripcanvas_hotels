@@ -1,4 +1,4 @@
-= simple_form_for @hotel, url: provider_hotels_path do |f|
+= simple_form_for @hotel, url: path do |f|
   - if @hotel.errors.any?
     #error_explanation
       h2 = "#{pluralize(@hotel.errors.count, "error")} prohibited this hotel from being saved:"
@@ -30,7 +30,7 @@
     = f.input :image, as: :file
   - if @hotel.image_data?
     .field
-      = image_tag @book.image_url(:thumb)
+      = image_tag @hotel.image_url(:thumb)
     .field
       | Remove attachment: 
       = f.input :remove_image, required: true, as: :check_boxes
