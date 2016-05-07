@@ -1,7 +1,10 @@
 .container style="width: 450px"
   .page-container-responsive
     h1 Editing hotel
-    == render 'form', path: provider_hotel_path
+    - if params[:c].present?
+      = render @category
+    - else
+      == render 'form', path: provider_hotel_path
     = link_to 'Show', @hotel
     '|
     = link_to 'Back', provider_hotels_path

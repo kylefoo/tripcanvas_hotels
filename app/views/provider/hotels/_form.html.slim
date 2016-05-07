@@ -26,12 +26,10 @@
     = f.input :website, placeholder: 'http://'
   .field
     = f.input :email, as: :email
-  .field
-    = f.input :image, as: :file
-  - if @hotel.image_data?
-    .field
-      = image_tag @hotel.image_url(:thumb)
-    .field
-      | Remove attachment: 
-      = f.input :remove_image, required: true, as: :check_boxes
   .actions = f.button :submit
+
+
+javascript:
+  $(document).on('upload:complete', 'form#new_image', function() {
+    $(this).submit();
+  });

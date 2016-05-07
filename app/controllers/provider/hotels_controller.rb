@@ -1,12 +1,13 @@
 class Provider::HotelsController < Provider::BaseController
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:edit]
 
   def index
     @hotels = @provider.hotels
   end
 
   def new
-    @hotel = Hotel.new
+    @hotel = @provider.hotels.new
     @cities = City.all
     @countries = Country.all
   end
@@ -68,7 +69,13 @@ class Provider::HotelsController < Provider::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:name, :city_id, :aasm_state, :slug, :description, :address, :email, :website, :phone_no, :image, :remove_image)
+      params.require(:hotel).permit(:name, :city_id, :aasm_state, :slug, :description, :address, :email, :website, :phone_no)
+    end
+    
+    def set_category
+      @category = case params[:c]
+        when 'photos' then 'photos'
+      end
     end
 
 end

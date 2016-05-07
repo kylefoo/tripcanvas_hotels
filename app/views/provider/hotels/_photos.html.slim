@@ -1,0 +1,9 @@
+- if @hotel.images.present?
+  - @hotel.images.each do |img|
+    .field
+      = image_tag img.image_url(:thumb)
+    .field
+      | Remove attachment: 
+      = f.input :remove_image, required: true, as: :check_boxes
+= simple_form_for @hotel.images.new, url: hotel_images_path(@hotel), method: :post do |i|
+  = i.input :image, as: :file
