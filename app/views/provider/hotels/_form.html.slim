@@ -27,9 +27,3 @@
   .field
     = f.input :email, as: :email
   .actions = f.button :submit
-
-
-javascript:
-  $(document).on('upload:complete', 'form#new_image', function() {
-    $(this).submit();
-  });
