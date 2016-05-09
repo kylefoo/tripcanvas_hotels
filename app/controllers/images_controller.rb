@@ -7,6 +7,7 @@ class ImagesController < ApplicationController
 
   def create
     image = @resource.images.create(image_params)
+    redirect_to :back, notice: 'Photo uploaded'
     # render partial: "photo", locals: {image: image, idx: @resource.images.count}
   end
 
