@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require DataTables
 //= require bootstrap
 //= require lightgallery
 //= require_tree .

@@ -46,6 +46,7 @@ gem 'shrine'
 # js-assets
 source 'https://rails-assets.org' do
   gem 'rails-assets-lightgallery'
+  gem 'rails-assets-DataTables'
 end
 
 group :staging, :test do

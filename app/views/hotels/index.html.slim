@@ -1,6 +1,6 @@
 h1 All hotels
 
-table
+table#hotels
   thead
     tr
       th Name
@@ -13,9 +13,6 @@ table
       th Website
       th Email
       th
-      th
-      th
-
   tbody
     - @hotels.each do |hotel|
       tr
@@ -31,7 +28,9 @@ table
         td = link_to 'Show', hotel
 
 br
-
 = link_to 'My Hotel', provider_hotels_path
 br
 = link_to 'New Hotel', new_provider_hotel_path
+
+javascript:
+  $('#hotels').dataTable();
