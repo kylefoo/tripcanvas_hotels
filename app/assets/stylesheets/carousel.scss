@@ -21,7 +21,7 @@
 .carousel-control .glyphicon-chevron-right:before {
     content: " ";
     display: block;
-    background: url(image_path("itineraries/arrow_right.png")) no-repeat;
+    background: url(image_path("arrow_right.png")) no-repeat;
     width: 28px;
     height: 50px;
 }
@@ -29,7 +29,7 @@
 .carousel-control .glyphicon-chevron-left:before {
     content: " ";
     display: block;
-    background: url(image_path("itineraries/arrow_left.png")) no-repeat;
+    background: url(image_path("arrow_left.png")) no-repeat;
     width: 28px;
     height: 50px;
 }
@@ -37,6 +37,7 @@
 .carousel-control.right,
 .carousel-control.left {
     background-image: none;
+    background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {
