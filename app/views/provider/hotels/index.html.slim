@@ -16,6 +16,7 @@
           th Email
           th
           th
+          th
 
       tbody
         - @hotels.each do |hotel|
@@ -28,7 +29,8 @@
             td = hotel.website
             td = hotel.email
             td = link_to 'Edit', edit_provider_hotel_path(hotel), class: 'btn btn-primary'
-            td = link_to 'Destroy', provider_hotel_path(hotel), data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+            td = link_to 'Edit Photos', edit_provider_hotel_path(hotel, c: 'photos'), class: 'btn btn-warning'
+            td = link_to 'Delete Hotel', provider_hotel_path(hotel), data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
     br
 

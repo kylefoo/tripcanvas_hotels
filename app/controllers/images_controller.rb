@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
-  before_action :set_resource
+  before_action :set_resource, only: [:create]
+  before_action :set_image, only: [:destroy, :update]
 
   def index
     @images = @resource.images
@@ -16,8 +17,16 @@ class ImagesController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    redirect_to :back, notice: 'Photo was successfully removed!' if @image.destroy
+  end
+
   private
   
+  def set_image
+    @image = Image.find(params[:id])
+  end
+
   def set_resource
     if params[:hotel_id]
       @resource = Hotel.find(params[:hotel_id])
