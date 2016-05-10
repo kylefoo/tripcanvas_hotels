@@ -1,37 +1,38 @@
-h1 My hotels
+= stylesheet_link_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'
+= javascript_include_tag 'https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js'
+.container style="width: 100%"
+  .page-container-responsive
+    h1 My hotels
 
-table
-  thead
-    tr
-      th Name
-      th City
-      th Aasm
-      th Slug
-      th Description
-      th Address
-      th Phone No
-      th Website
-      th Email
-      th
-      th
-      th
+    table#hotels.table.table-striped.table-bordered
+      thead
+        tr
+          th Name
+          th City
+          th Description
+          th Address
+          th Phone No
+          th Website
+          th Email
+          th
+          th
 
-  tbody
-    - @hotels.each do |hotel|
-      tr
-        td = hotel.name
-        td = hotel.city_id
-        td = hotel.aasm
-        td = hotel.slug
-        td = hotel.description
-        td = hotel.address
-        td = hotel.phone_no
-        td = hotel.website
-        td = hotel.email
-        td = link_to 'Show', hotel
-        td = link_to 'Edit', edit_provider_hotel_path(hotel)
-        td = link_to 'Destroy', provider_hotel_path(hotel), data: {:confirm => 'Are you sure?'}, :method => :delete
+      tbody
+        - @hotels.each do |hotel|
+          tr
+            td = link_to hotel.name, hotel
+            td = City.find(hotel.city_id).name
+            td = hotel.description
+            td = hotel.address
+            td = hotel.phone_no
+            td = hotel.website
+            td = hotel.email
+            td = link_to 'Edit', edit_provider_hotel_path(hotel), class: 'btn btn-primary'
+            td = link_to 'Destroy', provider_hotel_path(hotel), data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
-br
+    br
 
-= link_to 'New Hotel', new_provider_hotel_path
+    = link_to 'New Hotel', new_provider_hotel_path
+
+javascript:
+  $('#hotels').dataTable();
