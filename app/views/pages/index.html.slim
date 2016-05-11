@@ -1,11 +1,17 @@
+#fullscreen_post_bg style="background-image: url(#{image_url('villabhuvana.jpg')}); top center no-repeat"
+  .overlay
 .container
-  | Hi there,
-  p
-  - if user_signed_in? && current_user.provider?
-    | #{current_user.email}
-    p
-    = link_to "Create New Hotel", new_provider_hotel_path
-    br
-    = link_to "All Hotels", hotels_path
-  - else 
-    = link_to "All Hotels", hotels_path
+  .header
+    .header-overlay
+    .tagline-box
+      h1#logo Tripcanvas
+      h3.subheading Your Hotel Insider
+      .row.row-space-top-8
+        .col-xs-1.col-md-4
+        .col-xs-10.col-md-4
+          .space-top-md-5
+            - if user_signed_in? && current_user.provider?
+              = button_to 'View Hotels', hotels_path, method: :get, class: "btn btn-info btn-block"
+            - else 
+              = button_to 'Login', '#', remote: true, data: { toggle: 'modal', target: '.modal--login' }, class: "btn btn-success btn-block"
+        .col-xs-1.col-md-4

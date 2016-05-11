@@ -1,30 +1,28 @@
 = stylesheet_link_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'
 = javascript_include_tag 'https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js'
 .container style="width: 100%"
-  .page-container-responsive
-    h1 All hotels
+  h1 All hotels
 
-    table#hotels.table.table-striped.table-bordered
-      thead
+  table#hotels.table.table-striped.table-bordered
+    thead
+      tr
+        th Name
+        th City
+        th Description
+        th Address
+        th Phone No
+        th Website
+        th Email
+    tbody
+      - @hotels.each do |hotel|
         tr
-          th Name
-          th City
-          th Description
-          th Address
-          th Phone No
-          th Website
-          th Email
-      tbody
-        - @hotels.each do |hotel|
-          tr
-            td = link_to hotel.name, hotel
-            td = City.find(hotel.city_id).name
-            td = hotel.description
-            td = hotel.address
-            td = hotel.phone_no
-            td = hotel.website
-            td = hotel.email
-
+          td = link_to hotel.name, hotel
+          td = City.find(hotel.city_id).name
+          td = hotel.description
+          td = hotel.address
+          td = hotel.phone_no
+          td = hotel.website
+          td = hotel.email
     br
     = link_to 'My Hotel', provider_hotels_path
     br
