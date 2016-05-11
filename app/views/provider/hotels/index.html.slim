@@ -16,7 +16,6 @@
         th
         th
         th
-
     tbody
       - @hotels.each do |hotel|
         tr
@@ -27,11 +26,9 @@
           td = hotel.phone_no
           td = hotel.website
           td = hotel.email
-          td = link_to 'Edit', edit_provider_hotel_path(hotel), class: 'btn btn-primary'
-          td = link_to 'Edit Photos', edit_provider_hotel_path(hotel, c: 'photos'), class: 'btn btn-warning'
-          td = link_to 'Delete Hotel', provider_hotel_path(hotel), data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
-  br
-  = link_to 'New Hotel', new_provider_hotel_path
+          td = button_to 'Edit', edit_provider_hotel_path(hotel), method: :get, class: 'btn btn-primary btn-block'
+          td = button_to '+Photos', edit_provider_hotel_path(hotel), method: :get, class: 'btn btn-warning btn-block', params: { c: 'photos' }
+          td = button_to 'Delete Hotel', provider_hotel_path(hotel), method: :get, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger btn-block'
 
 javascript:
   $('#hotels').dataTable();

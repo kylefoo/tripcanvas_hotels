@@ -1,5 +1,5 @@
 .container style="width: 450px"
-  h1 Editing hotel
+  h1 Editing #{@hotel.name}
   - if params[:c].present?
     = render @category
   - else
