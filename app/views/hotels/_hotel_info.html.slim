@@ -1,0 +1,45 @@
+#hotel_summary.panel
+  .page-container-responsive
+    .row
+      .col-lg-8
+        .row.row-space-4.row-space-top-4
+          .col-lg-9.space-sm-4.space-4
+            #hotel_title.text-center-sm.text-center-md
+              span.h3.row-space-1
+                = @hotel.name
+            #hotel_city.row-space-4.text-muted.text-center-sm.text-center-md
+              a.link-reset
+                = City.find(@hotel.city_id).name
+              small.link-reset style="display: inline-block;padding-left: 10px;vertical-align:text-bottom;"
+                = @hotel.description
+            .row.row-space-2.text-center
+              .col-xs-6.text-left
+                = @hotel.phone_no
+              .col-xs-6.text-left
+                = @hotel.address
+            .row.row-space-2.text-center
+              .col-xs-6.text-left
+                = @hotel.email
+              .col-xs-6.text-left
+                = @hotel.website
+            .row.row-space-2.text-center
+              .col-xs-6.text-left
+                | test
+              .col-xs-6.text-left
+                | test
+      .col-lg-4
+        #call_to_action_form
+          #call_to_action.noFixed 
+            .panel style="border-style: none;"
+              .panel-body.panel-book style="padding: 10px 10px 0 10px; background-color: #707070; border-style: hidden; height: 38px;"
+                .h4.text-center style="color: white;"
+                  |Find The Best Price Online?
+              .panel-body.panel-light style="border-width: 1px; border-style: solid; border-color: #707070;"
+                #booking_container.row-space-top-3
+                  .row
+                    .col-sm-12 style=('padding:0;')
+                      = link_to 'Book Now', '#', data: { toggle: 'modal', target: '.modal--sign_up' }, class: 'btn btn--itinerary btn__wishlist row-space-top-1'
+                  #feeback_container.row-space-top-3.text-center.hidden-xs
+                    = link_to root_path, class: 'text-muted link-reset'
+                      span FAQ ?
+                      i.fa.fa-question

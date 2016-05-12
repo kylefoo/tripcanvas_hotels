@@ -1,3 +1,82 @@
 // Place all the styles related to the Hotels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#hotel_summary.panel {
+    border: 1px solid #eee;
+    background-color: #fff;
+    border-radius: 0;
+    margin-bottom: 0 !important;
+    #hotel_name {
+        h3 {
+            margin-top: 0px;
+        }
+    }
+    #call_to_action {
+        position: absolute;
+        width: 315px;
+        z-index: 10;
+        border-top: none;
+        margin-top: -40px;
+    }
+    #call_to_action_form {
+        width: 315px;
+    }
+    .mobile-bookit-btn-container {
+          display: none;
+        }
+    @media (min-width: 1100px) {
+        #call_to_action.fixed {
+            position: fixed;
+            z-index: 1001
+        }
+    }
+    #call_to_action.bottom {
+        position: absolute
+    }
+    #call_to_action .form-fields label {
+        padding-top: 0
+    }
+    #call_to_action sup {
+        margin-left: 3px
+    }
+    #call_to_action_button .icon-bolt {
+        position: relative;
+        top: 1px
+    }
+    // @media (max-width: 1099px) {
+    //     #call_to_action_form {
+    //         margin-top: 0
+    //     }
+    //     #call_to_action,
+    //     #call_to_action_form {
+    //         width: auto;
+    //         position: static
+    //     }
+    // }
+    @media (max-width: 1099px) {
+        #call_to_action,
+        #call_to_action_form{
+            // display: none;
+            width: auto;
+            position: static;
+        }
+        .mobile-bookit-btn-container {
+            display: block;
+        }
+        .panel-btn-fixed-sm {
+          position: fixed;
+          bottom: 40px;
+          left: 0;
+          right: 0;
+          z-index: 100;
+        }
+        .panel-btn-sm {
+          padding: 10px 20px;
+          left: 0;
+          right: 0;
+          z-index: 100;
+        }
+    }
+}
+
