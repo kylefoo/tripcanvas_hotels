@@ -6,7 +6,7 @@ header#js-carousel_service.js-carousel.carousel.slide data-ride="carousel" data-
   - else
     .carousel-inner
       - @hotel.images.each_with_index do |p, i|
-        .item.active data-src='#{p.image_url(:original)}' 
+        .item class="#{'active' if i == 0}" data-src='#{p.image_url(:original)}' 
           = link_to image_path(p.image_url(:original)) do
             .fill style="background-image:url('#{p.image_url(:original)}');"
     - if @hotel.images.count > 1
@@ -14,6 +14,10 @@ header#js-carousel_service.js-carousel.carousel.slide data-ride="carousel" data-
         span.glyphicon.glyphicon-chevron-left
       = link_to '#', data: { slide: 'next', target: '#js-carousel_service' }, class: 'carousel-control right' do
         span.glyphicon.glyphicon-chevron-right
+    javascript:
+      $('.carousel-inner').lightGallery({
+        selector: '.item'
+      });
 p#notice = notice
 
 .container
@@ -49,8 +53,3 @@ p#notice = notice
 = link_to 'Edit', edit_provider_hotel_path(@hotel)
 '|
 = link_to 'Back', hotels_path
-
-javascript:
-  $('.carousel-inner').lightGallery({
-    selector: '.item'
-  });
