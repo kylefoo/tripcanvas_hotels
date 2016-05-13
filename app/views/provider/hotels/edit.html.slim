@@ -4,6 +4,7 @@
     = render @category
   - else
     == render 'form', path: provider_hotel_path
+    = button_to '+Photos', edit_provider_hotel_path(@hotel), method: :get, class: 'btn btn-warning btn-block', params: { c: 'photos' }
   = link_to 'Show', @hotel
   '|
   = link_to 'Back', provider_hotels_path

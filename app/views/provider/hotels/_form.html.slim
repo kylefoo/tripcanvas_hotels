@@ -10,12 +10,6 @@
     = f.input :name, required: true
   .field
     = f.input :city_id, collection: @cities, required: true
-  / .field
-  /   = f.label :aasm
-  /   = f.text_field :aasm
-  / .field
-  /   = f.label :slug
-  /   = f.text_field :slug
   .field
     = f.input :description, as: :text
   .field
@@ -26,4 +20,5 @@
     = f.input :website, placeholder: 'http://'
   .field
     = f.input :email, as: :email
-  .actions = f.button :submit
+  .actions = f.button :submit, class: 'btn btn-success btn-block'
+
