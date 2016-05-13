@@ -19,6 +19,7 @@ header#js-carousel_service.js-carousel.carousel.slide data-ride="carousel" data-
         selector: '.item'
       });
 = render 'hotel_info'
+= @hotel.description
 
 
 = link_to 'Edit', edit_provider_hotel_path(@hotel)
