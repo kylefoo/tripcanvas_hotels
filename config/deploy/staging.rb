@@ -1,5 +1,5 @@
-server '128.199.70.207', user: 'deploy', roles: %w{web app db}
-set :application, 'tripcanvas_hotels'
+server '128.199.113.20', user: 'deploy', roles: %w{web app db}
+set :application, 'tripcanvas'
 set :rails_env, 'staging'
 set :branch, 'master'
 # server-based syntax
