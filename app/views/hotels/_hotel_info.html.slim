@@ -20,13 +20,32 @@
             .panel style="border-style: none;"
               .panel-body.panel-book style="padding: 10px 10px 0 10px; background-color: #666666; border-style: hidden; height: 38px;"
                 .h4.text-center style="color: white;"
-                  |Find The Best Price Online?
+                  |Find the best price online?
               .panel-body.panel-light style="border-width: 1px; border-style: solid; border-color: #666666;"
                 #booking_container.row-space-top-3
                   .row
                     .col-sm-12 style=('padding:0;')
-                      = link_to 'Book Now', '#', data: { toggle: 'modal', target: '.modal--sign_up' }, class: 'btn btn--itinerary btn__wishlist row-space-top-1'
+                      = link_to 'Book Now At USD ', '#', id: "bookdotcom", class: 'btn btn--itinerary btn__wishlist row-space-top-1'
                   #feeback_container.row-space-top-3.text-center.hidden-xs
                     = link_to root_path, class: 'text-muted link-reset'
                       span FAQ ?
                       i.fa.fa-question
+
+javascript:
+  $.ajax({
+    data: {},
+    headers: {
+    'Authorization':'Basic dHJpcGNhbnZhczp0cmlwY2FudmFzMTI5MA==',
+    'Accept': "text/javascript; charset=utf-8",
+    },
+    url: 'https://distribution-xml.booking.com/json/getHotelAvailabilityV2?output=room_policies,room_details,hotel_details&checkin=2016-08-01&checkout=2016-08-02&room1=A,A&rows=1&currency_code=USD&hotel_ids=27005',
+    type: "GET",
+    dataType: "json",
+    success: function(data) {
+      console.log(data.hotels[0].room_min_price.price_other_currency);
+      $('#bookdotcom').append(data.hotels[0].room_min_price.price_other_currency);
+    },
+    error: function(results) {
+      console.log(results);
+    }
+  });
