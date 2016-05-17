@@ -69,7 +69,7 @@ class Provider::HotelsController < Provider::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:name, :city_id, :aasm_state, :slug, :description, :address, :email, :website, :phone_no)
+      params.require(:hotel).permit(:name, :city_id, :aasm_state, :slug, :description, :address, :email, :website, :phone_no, articles: [])
     end
     
     def set_category

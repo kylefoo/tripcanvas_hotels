@@ -1,17 +1,19 @@
 = render 'gallery'
 = render 'hotel_info'
-= @hotel.description
-
-= link_to 'Edit', edit_provider_hotel_path(@hotel)
-'|
-= link_to 'Back', hotels_path
-p#notice = notice
+.container
+  .page-container-responsive
+    = @hotel.description
+    .space-6.space-top-4
+    = link_to 'Edit', edit_provider_hotel_path(@hotel), class: 'btn btn-success'
+    |  
+    = link_to 'Back', hotels_path, class: 'btn btn-primary'
+    p#notice = notice
 
 .page-container-responsive.space-6.space-top-4
   - if @related_articles.present?
     .row
       .col-lg-8
-        h4.h3--title.row-space-4 Related Articles
-    - @related_articles.each do |article|
-      #cards_container.row.lg.card-container-pg
-        = render 'shared/article', a: article
+        h4.row-space-4 Related Articles
+        - @related_articles.each do |article|
+          #cards_container.row.lg.card-container-pg
+            = render 'shared/article', a: article
