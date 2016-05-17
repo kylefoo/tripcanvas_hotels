@@ -139,6 +139,9 @@ GEM
     net-ssh (3.0.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    opengraph_parser (0.2.3)
+      addressable
+      nokogiri
     orm_adapter (0.5.0)
     passenger (5.0.11)
       rack
@@ -267,6 +270,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
+  opengraph_parser
   passenger (= 5.0.11)
   pg
   rails (= 4.2.6)

@@ -25,6 +25,9 @@ gem 'slim-rails'
 gem 'font-awesome-rails', '~> 4.4.0'
 gem 'growlyflash', '~> 0.6.0'
 
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
 # authentication
 gem 'devise'
 
@@ -33,15 +36,13 @@ gem 'enumerize'
 gem 'friendly_id', '~> 5.1.0'
 gem 'aasm', '4.10.0'
 gem 'simple_form'
+gem 'opengraph_parser'
 
-#
+#image-process
 gem 'fastimage'
 gem 'image_processing'
 gem 'mini_magick'
 gem 'shrine'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # js-assets
 source 'https://rails-assets.org' do

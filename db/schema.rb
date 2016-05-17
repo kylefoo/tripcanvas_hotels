@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507161724) do
+ActiveRecord::Schema.define(version: 20160517183555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "affiliates", force: :cascade do |t|
+    t.integer  "affiliate_id"
+    t.string   "affiliate_label"
+    t.integer  "hotel_id"
+    t.integer  "code"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -42,12 +51,13 @@ ActiveRecord::Schema.define(version: 20160507161724) do
     t.string   "slug"
     t.text     "description"
     t.string   "address"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "provider_id"
     t.string   "email"
     t.string   "phone_no"
     t.string   "website"
+    t.string   "articles",    default: [],              array: true
   end
 
   create_table "images", force: :cascade do |t|

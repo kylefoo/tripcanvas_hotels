@@ -1,6 +1,6 @@
 class Hotel < ActiveRecord::Base
   belongs_to :provider
-  
+  has_many :affiliates
   has_many :images, as: :imageable
   accepts_nested_attributes_for :images, allow_destroy: true
   include AASM

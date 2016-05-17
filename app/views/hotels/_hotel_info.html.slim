@@ -10,12 +10,12 @@
             .row-space-4.text-center-sm.text-center-md
               .text-muted
                 = link_to "https://maps.google.com?q=#{@hotel.address.gsub(/ /, '+')}", target: "_blank" do
-                  | #{@hotel.address}  
+                  = @hotel.address
                   i.fa.fa-location-arrow
               .text-muted
                 | #{@hotel.phone_no} | #{mail_to @hotel.email}
               .text-muted
-                = link_to @hotel.website, @hotel.website
+                = link_to @hotel.website, "http://#{@hotel.website}", target: "_blank"
       .col-lg-4
         #call_to_action_form
           #call_to_action.noFixed 
@@ -35,7 +35,7 @@
                     .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
                       #hotelquickly style=('padding: 10px;')
                         = image_tag('hotelquickly/logo-hotelquickly.png', style: 'width: 150px; height: 30px;')
-                        | USD XXX
+                        |  USD XXX
 javascript:
   $.ajax({
     data: {},
