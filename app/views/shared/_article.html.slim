@@ -1,13 +1,13 @@
-.cardy
-  .card-container
+.col-xs-12.col-sm-4.col-md-6.col-lg-4  
+  .card-container.card-container__card
     .card
       .photo
         = link_to a.url, target: "_blank" do
-          = image_tag(a.images.first, style: 'width: 130px; height: 30px;')
+          = image_tag(a.images.first)
       .details
-        h3.h5.text-truncate.itinerary-name title=a.title
+        h3.h5.text-truncate.article-name title=a.title
           = link_to a.title, a.url, target: "_blank"
-        .media.media--right.clearfix style=("margin:0;")
+        .media.clearfix style=("margin:0;")
           - if a.description 
             .text-muted.text-truncate
               = strip_tags(a.description)
