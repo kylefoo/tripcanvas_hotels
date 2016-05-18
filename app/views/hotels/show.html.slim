@@ -2,7 +2,8 @@
 = render 'hotel_info'
 .panel style="background-color: #f3f3f3; min-height: 300px;"
   .container
-    = @hotel.description
+    .page-container-responsive style="padding: 20px;"
+      = @hotel.description
     .space-6.space-top-4
     / .pull-right
     /   = link_to 'Edit', edit_provider_hotel_path(@hotel), class: 'btn btn-success'
