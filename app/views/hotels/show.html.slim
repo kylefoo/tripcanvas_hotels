@@ -1,12 +1,14 @@
 = render 'gallery'
 = render 'hotel_info'
-.container
-  = @hotel.description
-  .space-6.space-top-4
-  = link_to 'Edit', edit_provider_hotel_path(@hotel), class: 'btn btn-success'
-  |  
-  = link_to 'Back', hotels_path, class: 'btn btn-primary'
-  p#notice = notice
+.panel style="background-color: #f3f3f3; min-height: 300px;"
+  .container
+    = @hotel.description
+    .space-6.space-top-4
+    / .pull-right
+    /   = link_to 'Edit', edit_provider_hotel_path(@hotel), class: 'btn btn-success'
+    /   |  
+    /   = link_to 'Back', hotels_path, class: 'btn btn-primary'
+p#notice = notice
 
 .page-container-responsive.space-6.space-top-4
   - if @related_articles.present?

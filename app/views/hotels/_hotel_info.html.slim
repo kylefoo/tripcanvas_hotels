@@ -9,13 +9,15 @@
                 = @hotel.name
             .row-space-4.text-center-sm.text-center-md
               .text-muted
-                = link_to "https://maps.google.com?q=#{@hotel.address.gsub(/ /, '+')}", target: "_blank" do
-                  = @hotel.address
-                  i.fa.fa-location-arrow
+                = @hotel.address
+                | - 
+                = link_to 'Show map', "https://maps.google.com?q=#{@hotel.address.gsub(/ /, '+')}", target: "_blank" 
               .text-muted
                 | #{@hotel.phone_no} | #{mail_to @hotel.email}
               .text-muted
-                = link_to @hotel.website, "http://#{@hotel.website}", target: "_blank"
+                = link_to "http://#{@hotel.website}", target: "_blank" do 
+                  | Official website  
+                  i.fa.fa-share-square-o
       .col-lg-4
         #call_to_action_form
           #call_to_action.noFixed 
