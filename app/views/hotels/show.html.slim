@@ -15,6 +15,6 @@ p#notice = notice
   - if @related_articles.present?
     .row
       .col-lg-8
-        h4.row-space-4 Related Articles
+        h4.row-space-4 Also featured on 
         - @related_articles.each do |article|
           = render 'shared/article', a: article

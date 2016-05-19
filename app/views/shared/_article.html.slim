@@ -3,7 +3,7 @@
     .card
       .photo
         = link_to a.url, target: "_blank" do
-          = image_tag(a.images.first)
+          = image_tag(a.images.first, style: "height: 100px; width: auto;")
       .details
         h3.h5.text-truncate.article-name title=a.title
           = link_to a.title, a.url, target: "_blank"
