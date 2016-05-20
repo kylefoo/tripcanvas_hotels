@@ -1,0 +1,11 @@
+|New Affiliate
+= simple_form_for @hotel.affiliates.new, url: hotel_affiliates_path(@hotel), method: :post do |i|
+  = i.input :affiliate_id, as: :integer
+  = i.input :affiliate_label, as: :string
+  = i.input :code, as: :integer
+  = i.button :submit
+
+javascript:
+  $(document).on('upload:complete', 'form#new_image', function() {
+    $(this).submit();
+  });

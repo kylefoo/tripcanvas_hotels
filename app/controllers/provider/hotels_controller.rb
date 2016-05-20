@@ -75,6 +75,7 @@ class Provider::HotelsController < Provider::BaseController
     def set_category
       @category = case params[:c]
         when 'photos' then 'photos'
+        when 'affiliates' then 'affiliates'
       end
     end
 

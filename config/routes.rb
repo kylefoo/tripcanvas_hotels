@@ -16,12 +16,13 @@ Rails.application.routes.draw do
   # resources :users
   resources :hotels, only: [:index, :show] do
     resources :images
+    resources :affilites
   end
   resources :countries, only: [:index, :show]
   resources :cities, only: [:index, :show]
 
   namespace :provider do
-    resources :hotels, only: [:index, :create, :new, :edit, :update, :destroy]
+    resources :hotels
   end
 
   namespace :admin do
