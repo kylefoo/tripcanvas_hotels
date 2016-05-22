@@ -3,35 +3,35 @@ class Provider::AffiliatesController < ApplicationController
   before_action :set_image, only: [:destroy, :update]
 
   def index
-    @images = @resource.images
+    @affiliates = @hotel.affiliates
   end
 
   def create
-    image = @resource.images.create(image_params)
-    redirect_to :back, notice: 'Photo uploaded'
+    image = @hotel.affiliates.create(affiliate_params)
+    redirect_to :back, notice: 'Affiliate created'
     # render partial: "photo", locals: {image: image, idx: @resource.images.count}
   end
 
   def update
-    @resource.update(image_params)
+    @hotel.update(affiliate_params)
     redirect_to root_path
   end
 
   def destroy
-    redirect_to :back, notice: 'Photo was successfully removed!' if @image.destroy
+    redirect_to :back, notice: 'Affiliate was successfully removed!' if @affiliate.destroy
   end
 
   private
   
-  def set_image
-    @image = Image.find(params[:id])
+  def set_affiliate
+    @affiliate = Affiliate.find(params[:id])
   end
 
   def set_hotel
-    if params[:hotel_id]
-      @resource = Hotel.find(params[:hotel_id])
-    elsif params[:user_id]
-      @resource = User.find(params[:user_id])
-    end
+    @hotel = Hotel.find(params[:hotel_id])
+  end
+
+  def affiliate_params
+    params.require(:affiliate).permit(:affiliate_id, :affiliate_label, :code, :remove_affiliate)
   end
 end
