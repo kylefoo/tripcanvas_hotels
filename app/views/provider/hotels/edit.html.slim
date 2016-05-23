@@ -4,6 +4,8 @@
     hr
     = render @category
   - else
+    h3 Editing #{@hotel.name}
+    hr
     == render 'form', path: provider_hotel_path
     = button_to '+Photos', edit_provider_hotel_path(@hotel), method: :get, class: 'btn btn-warning btn-block', params: { c: 'photos' }
   = link_to 'Show', @hotel

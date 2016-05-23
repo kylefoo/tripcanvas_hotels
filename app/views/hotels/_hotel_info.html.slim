@@ -27,18 +27,22 @@
                   |Find the best price online?
               .panel-body.panel-light style="border-width: 1px; border-style: solid; border-color: #666666;"
                 #booking_container.row-space-top-3
-                  .row
-                    .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
-                      #bookdotcom style=('padding: 10px;')
-                        = link_to 'https://secure.booking.com/book.html?aid=1141958&hostname=www.tripcanvas.co&hotel_id=27005'
-                          = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 130px; height: 30px;')
-                        | USD
-                  .row-space-top-2
-                  .row
-                    .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
-                      #hotelquickly style=('padding: 10px;')
-                        = image_tag('hotelquickly/logo-hotelquickly.png', style: 'width: 150px; height: 30px;')
-                        |  USD XXX
+                  - if @hotel.affiliates.present?
+                    - @hotel.affiliates.each do |a|
+                      .row
+                        .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
+                          - if a.affiliate_label == 'bookingdotcom'
+                            #bookdotcom style=('padding: 10px;')
+                              = link_to 'https://secure.booking.com/book.html?aid=#{a.affiliate_id}&hostname=www.tripcanvas.co&hotel_id=#{a.code}'
+                                = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 130px; height: 30px;')
+                              | USD
+                          - elsif a.affiliate_label == 'hotelquickly'
+                            #hotelquickly style=('padding: 10px;')
+                              = image_tag('hotelquickly/logo-hotelquickly.png', style: 'width: 150px; height: 30px;')
+                              |  USD XXX
+                      .row-space-2
+
+
 javascript:
   $.ajax({
     data: {},

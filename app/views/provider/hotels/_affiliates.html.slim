@@ -4,7 +4,7 @@
     = link_to 'Delete This', hotel_affiliate_path(hotel_id: @hotel.id, id: a.id), data: {:confirm => 'Are you sure to remove this affiliate?'}, method: :delete, class: 'fa fa-trash'
     p
 = simple_form_for @hotel.affiliates.new, url: hotel_affiliates_path(@hotel), method: :post do |i|
-  = i.input :affiliate_label, as: :radio_buttons, collection: ['bookingdotcom','hotelquickly'], prompt: "Select partner"
+  = i.input :affiliate_label, label: 'Affiliate Provider', as: :radio_buttons, collection: ['bookingdotcom','hotelquickly'], prompt: "Select partner"
   = i.input :affiliate_id, as: :integer, label: 'Affiliate id'
   = i.input :code, as: :integer, label: 'Hotel code'
   = i.button :submit
