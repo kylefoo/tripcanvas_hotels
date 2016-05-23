@@ -1,16 +1,16 @@
 = javascript_include_tag 'https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js'
-.container style="width: 100%"
+= javascript_include_tag 'https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'
+= javascript_include_tag 'https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js'
+.container
   h1 My hotels
 
-  table#hotels.table.table-striped.table-bordered
+  table#hotels.table.table-striped.table-bordered.dt-responsive.nowrap cellspacing="0" width="100%"
     thead
       tr
         th Name
         th City
         th Address
         th Phone No
-        th Website
-        th Email
         th
         th
         th
@@ -22,12 +22,12 @@
           td = City.find(hotel.city_id).name
           td = hotel.address
           td = hotel.phone_no
-          td = hotel.website
-          td = hotel.email
           td = button_to 'Edit', edit_provider_hotel_path(hotel), method: :get, class: 'btn btn-success btn-block'
           td = button_to '+Photos', edit_provider_hotel_path(hotel), method: :get, class: 'btn btn-warning btn-block', params: { c: 'photos' }
           td = button_to '+Affiliates', edit_provider_hotel_path(hotel), method: :get, class: 'btn btn-primary btn-block', params: { c: 'affiliates' }
           td = button_to 'Delete Hotel', provider_hotel_path(hotel), data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger btn-block'
 
 javascript:
-  $('#hotels').dataTable();
+  $('#hotels').DataTable({
+    responsive: true
+  });

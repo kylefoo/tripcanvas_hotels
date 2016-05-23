@@ -1,8 +1,10 @@
 = javascript_include_tag 'https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js'
-.container style="width: 100%"
+= javascript_include_tag 'https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'
+= javascript_include_tag 'https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js'
+.container
   h1 All hotels
 
-  table#hotels.table.table-striped.table-bordered
+  table#hotels.table.table-striped.table-bordered.dt-responsive.nowrap cellspacing="0" width="100%"
     thead
       tr
         th Name
@@ -22,4 +24,6 @@
           td = hotel.email
 
 javascript:
-  $('#hotels').dataTable();
+  $('#hotels').DataTable({
+    responsive: true
+  });
