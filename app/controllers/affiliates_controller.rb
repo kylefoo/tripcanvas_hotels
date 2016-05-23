@@ -1,4 +1,4 @@
-class Provider::AffiliatesController < ApplicationController
+class AffiliatesController < ApplicationController
   before_action :set_hotel, only: [:create]
   before_action :set_image, only: [:destroy, :update]
 

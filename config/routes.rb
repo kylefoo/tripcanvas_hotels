@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # resources :users
   resources :hotels, only: [:index, :show] do
     resources :images
-    resources :affilites
+    resources :affiliates
   end
   resources :countries, only: [:index, :show]
   resources :cities, only: [:index, :show]

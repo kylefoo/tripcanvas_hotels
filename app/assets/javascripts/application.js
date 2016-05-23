@@ -15,4 +15,5 @@
 //= require DataTables
 //= require bootstrap
 //= require lightgallery
+//= require growlyflash
 //= require_tree .

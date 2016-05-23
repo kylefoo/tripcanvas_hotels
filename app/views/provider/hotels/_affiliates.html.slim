@@ -1,8 +1,11 @@
-|New Affiliate
-= simple_form_for @hotel.affiliates.new, url: hotel_affilites_path(@hotel), method: :post do |i|
-  = i.input :affiliate_id, as: :integer
-  = i.input :affiliate_label, as: :string
-  = i.input :code, as: :integer
+- if @hotel.affiliates.present?
+  - @hotel.affiliates.each do |a|
+    = a.affiliate_id
+    = a.affiliate_label
+= simple_form_for @hotel.affiliates.new, url: hotel_affiliates_path(@hotel), method: :post do |i|
+  = i.input :affiliate_label, collection: ['bookingdotcom','hotelquickly'], prompt: "Select partner"
+  = i.input :affiliate_id, as: :integer, label: 'Affiliate id'
+  = i.input :code, as: :integer, label: 'Hotel code'
   = i.button :submit
 
 javascript:

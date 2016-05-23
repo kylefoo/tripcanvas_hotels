@@ -1,9 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'growlyflash';
+
+//App
+@import '/**/*';
+@import '*';
+
+//Vendors
 @import 'lightgallery';
 @import 'DataTables';
 @import 'font-awesome';
-@import 'components/*';
-@import 'vendors/*';
-@import '*';
+@import 'growlyflash';

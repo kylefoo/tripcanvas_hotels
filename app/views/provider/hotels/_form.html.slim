@@ -9,7 +9,7 @@
   .field
     = f.input :name, required: true
   .field
-    = f.input :city_id, collection: @cities, required: true
+    = f.input :city_id, collection: @cities, required: true, prompt: "Select city"
   .field
     = f.input :description, as: :text
   .field

@@ -14,6 +14,7 @@ class Provider::HotelsController < Provider::BaseController
 
   # GET /hotels/1/edit
   def edit
+    byebug
     @cities = City.all
     @countries = Country.all
   end
