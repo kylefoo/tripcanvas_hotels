@@ -27,7 +27,7 @@
           td = button_to 'Edit', edit_provider_hotel_path(hotel), method: :get, class: 'btn btn-success btn-block'
           td = button_to '+Photos', edit_provider_hotel_path(hotel), method: :get, class: 'btn btn-warning btn-block', params: { c: 'photos' }
           td = button_to '+Affiliates', edit_provider_hotel_path(hotel), method: :get, class: 'btn btn-primary btn-block', params: { c: 'affiliates' }
-          td = button_to 'Delete Hotel', provider_hotel_path(hotel), method: :get, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger btn-block'
+          td = button_to 'Delete Hotel', provider_hotel_path(hotel), data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger btn-block'
 
 javascript:
   $('#hotels').dataTable();

@@ -1,6 +1,6 @@
 class AffiliatesController < ApplicationController
   before_action :set_hotel, only: [:create]
-  before_action :set_image, only: [:destroy, :update]
+  before_action :set_affiliate, only: [:destroy, :update]
 
   def index
     @affiliates = @hotel.affiliates
@@ -13,8 +13,8 @@ class AffiliatesController < ApplicationController
   end
 
   def update
-    @hotel.update(affiliate_params)
-    redirect_to root_path
+    # @hotel.update(affiliate_params)
+    # redirect_to root_path
   end
 
   def destroy
