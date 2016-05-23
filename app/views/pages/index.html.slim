@@ -11,7 +11,11 @@
         .col-xs-10.col-md-4
           .space-top-md-5
             - if user_signed_in? && current_user.provider?
-              = button_to 'View Hotels', hotels_path, method: :get, class: "btn btn-info btn-block"
-            - else 
+              = button_to 'My Hotels', provider_hotels_path, method: :get, class: "btn btn-info btn-block"
+              p
+              = button_to 'All Hotels', hotels_path, method: :get, class: "btn btn-warning btn-block"
+            - elsif user_signed_in? && current_user.user?
+              = button_to 'View Hotels', hotels_path, method: :get, class: "btn btn-warning btn-block"
+            - else
               = button_to 'Login', '#', remote: true, data: { toggle: 'modal', target: '.modal--login' }, class: "btn btn-success btn-block"
         .col-xs-1.col-md-4
