@@ -1,23 +1,26 @@
-- if @hotel.affiliates.present?
-  - @hotel.affiliates.each do |a|
-    .panel.row-space-4
-      .panel-header
-        | #{a.affiliate_label} 
-      .panel-body.highlight-panel-header
-        .row
-          .col-xs-12
-            ul.list-unstyled
-              li 
-                strong Affiliate_id: 
-                |#{a.affiliate_id}
-              li 
-                strong Hotel_id: 
-                |#{a.code}
-              li
-                strong Hotel_url: 
-                | #{a.url}
-      .panel-footer style='padding: 10px;'
-        = button_to 'Delete This', hotel_affiliate_path(hotel_id: @hotel.id, id: a.id), data: {:confirm => 'Are you sure to remove this affiliate?'}, method: :delete, class: 'btn btn-danger'
+.row
+  - if @hotel.affiliates.present?
+    - @hotel.affiliates.each do |a|
+      .col-md-6
+        .panel.row-space-4
+          .panel-header
+            = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 130px; height: 30px;') if a.affiliate_label == 'bookingdotcom'
+            = image_tag('hotelquickly/logo-hotelquickly.png', style: 'width: 140px; height: 30px;') if a.affiliate_label == 'hotelquickly'
+          .panel-body.highlight-panel-header
+            .row
+              .col-xs-12
+                ul.list-unstyled
+                  li 
+                    strong Affiliate_id: 
+                    |#{a.affiliate_id}
+                  li 
+                    strong Hotel_id: 
+                    |#{a.code}
+                  li
+                    strong Hotel_url: 
+                    | #{a.url}
+          .panel-footer style='padding: 10px;'
+            = button_to 'Delete This', hotel_affiliate_path(hotel_id: @hotel.id, id: a.id), data: {:confirm => 'Are you sure to remove this affiliate?'}, method: :delete, class: 'btn btn-danger'
 p
 = link_to 'New Affiliate', '#', data: { toggle: 'modal', target: '.modal--new_affiliate' }, class: 'btn btn-success'
 p

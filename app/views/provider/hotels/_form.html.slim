@@ -1,3 +1,4 @@
+= tinymce_assets
 = simple_form_for @hotel, url: path do |f|
   - if @hotel.errors.any?
     #error_explanation
@@ -5,22 +6,35 @@
       ul
         - @hotel.errors.full_messages.each do |message|
           li = message
-
-  .field
-    = f.input :name, required: true
-  .field
-    = f.input :city_id, collection: @cities, required: true, prompt: "Select city"
-  .field
-    = f.input :description, as: :text
-  .field
-    = f.input :address, as: :url, required: true
-  .field
-    = f.input :phone_no, as: :tel, required: true, placeholder: '+1 (234) 567 890'
-  .field
-    = f.input :website, placeholder: 'http://'
-  .field
-    = f.input :email, as: :email
-  .field
-    = f.input :articles, as: :string
+  .row.row-condensed.space-4
+    .col-sm-6
+      .field
+        = f.input :name, required: true
+    .col-sm-6
+      .field
+        = f.input :city_id, collection: @cities, required: true, prompt: "Select city"
+  .row.row-condensed.space-4
+    .col-sm-12
+      .field
+        = f.input :description, as: :text, input_html: {class: "tinymce", rows: 20}
+  .row.row-condensed.space-4
+    .col-sm-6 
+      .field
+        = f.input :address, as: :url, required: true
+    .col-sm-6
+      .field
+        = f.input :phone_no, as: :tel, required: true, placeholder: '+1 (234) 567 890'
+  .row.row-condensed.space-4
+    .col-sm-6 
+      .field
+        = f.input :website, placeholder: 'http://'
+    .col-sm-6 
+      .field
+        = f.input :email, as: :email
+  .row.row-condensed.space-4
+    .col-sm-12
+      .field
+        = f.input :articles, as: :string
   .actions = f.button :submit, class: 'btn btn-success btn-block'
 
+= tinymce :alternate
