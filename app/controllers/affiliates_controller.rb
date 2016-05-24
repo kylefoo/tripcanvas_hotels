@@ -32,6 +32,6 @@ class AffiliatesController < ApplicationController
   end
 
   def affiliate_params
-    params.require(:affiliate).permit(:affiliate_id, :affiliate_label, :code, :remove_affiliate)
+    params.require(:affiliate).permit(:affiliate_id, :affiliate_label, :code, :url, :remove_affiliate)
   end
 end

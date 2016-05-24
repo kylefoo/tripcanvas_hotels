@@ -35,29 +35,11 @@
                             #bookdotcom style=('padding: 10px;')
                               = link_to 'https://secure.booking.com/book.html?aid=#{a.affiliate_id}&hostname=www.tripcanvas.co&hotel_id=#{a.code}'
                                 = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 130px; height: 30px;')
-                              | USD
                           - elsif a.affiliate_label == 'hotelquickly'
                             #hotelquickly style=('padding: 10px;')
                               = image_tag('hotelquickly/logo-hotelquickly.png', style: 'width: 150px; height: 30px;')
                               |  USD XXX
                       .row-space-2
 
-
 javascript:
-  $.ajax({
-    data: {},
-    headers: {
-    'Authorization':'Basic dHJpcGNhbnZhczp0cmlwY2FudmFzMTI5MA==',
-    'Accept': "text/javascript; charset=utf-8",
-    },
-    url: 'https://distribution-xml.booking.com/json/getHotelAvailabilityV2?output=room_policies,room_details,hotel_details&checkin=2016-06-01&checkout=2016-06-02&room1=A,A&rows=1&currency_code=USD&hotel_ids=27074',
-    type: "GET",
-    dataType: "json",
-    success: function(data) {
-      console.log(data.hotels[0].room_min_price.price_other_currency);
-      $('#bookdotcom').append(data.hotels[0].room_min_price.price_other_currency);
-    },
-    error: function(results) {
-      console.log(results);
     }
-  });

@@ -11,6 +11,7 @@ class HotelsController < ApplicationController
   # GET /hotels/1.json
   def show
     @related_articles = @hotel.articles.map { |a| OpenGraph.new(a)} 
+    gon.affiliates = @hotel.affiliates
   end
 
   private

@@ -7,7 +7,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true 
     = csrf_meta_tags 
     = favicon_link_tag 'mts-favicon.png'
-
+    = Gon::Base.render_data
   body
     .wrapper
       = render "users/sessions/login_modal" 
