@@ -1,3 +1,5 @@
+- checkin = (Date.current + 14).to_date.strftime("%Y-%m-%d").split("-")
+- checkout = (Date.current + 15).to_date.strftime("%Y-%m-%d").split("-")
 #hotel_summary.panel
   .page-container-responsive
     .row
@@ -33,13 +35,43 @@
                         .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
                           - if a.affiliate_label == 'bookingdotcom'
                             #bookdotcom style=('padding: 10px;')
-                              = link_to 'https://secure.booking.com/book.html?aid=#{a.affiliate_id}&hostname=www.tripcanvas.co&hotel_id=#{a.code}'
+                              = link_to "#{a.url}?checkin_year_month=#{checkin.first}-#{checkin.second}&checkin_monthday=#{checkin.last}&checkout_year_month=#{checkout.first}-#{checkout.second}&checkout_monthday=#{checkout.last}&selected_currency=USD&aid=#{a.affiliate_id}", target: :"_blank"
                                 = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 130px; height: 30px;')
+                                .bookdotcomprice style="display: inline;" USD 
                           - elsif a.affiliate_label == 'hotelquickly'
                             #hotelquickly style=('padding: 10px;')
                               = image_tag('hotelquickly/logo-hotelquickly.png', style: 'width: 150px; height: 30px;')
-                              |  USD XXX
+                                .hotelquicklyprice USD 
                       .row-space-2
 
 javascript:
+  var checkin =  "#{(Date.current + 14).to_date.strftime('%Y-%m-%d')}" ;
+  var checkout = "#{(Date.current + 15).to_date.strftime('%Y-%m-%d')}" ;
+  var $bookingdotcomprice = $(".bookdotcomprice");
+  var $hotelquicklyprice = $(".hotelquicklyprice");
+  gon.affiliates.forEach(function(affiliate) {
+    if (affiliate.affiliate_label == "bookingdotcom"){
+      checkRates(checkin, checkout, affiliate.code, $bookingdotcomprice);
     }
+    else if (affiliate.affiliate_label == "hotelquickly") {
+      checkRates(checkin, checkout, affiliate.code, $hotelquicklyprice);
+    }
+  });
+  function checkRates(checkin, checkout, code, element) {
+    $.ajax({
+      data: {},
+      headers: {
+      'Authorization':'Basic dHJpcGNhbnZhczp0cmlwY2FudmFzMTI5MA==',
+      'Accept': "text/javascript; charset=utf-8",
+      },
+      url: "https://distribution-xml.booking.com/json/getHotelAvailabilityV2?output=room_policies,room_details,hotel_details&checkin="+checkin+"&checkout="+checkout+"&room1=A,A&rows=1&currency_code=USD&hotel_ids="+code,
+      type: "GET",
+      dataType: "json",
+      success: function(data) {
+        element.append(data.hotels[0].room_min_price.price_other_currency);
+      },
+      error: function(results) {
+        console.log(results);
+      }
+    });  
+  };
