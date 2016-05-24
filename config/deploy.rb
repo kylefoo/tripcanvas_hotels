@@ -43,16 +43,11 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for keep_releases is 5
 set :keep_releases, 2
 
-# Remote database syncing
-set :disallow_pushing, true
-set :db_local_clean, true
-set :db_remote_clean, true
-
 namespace :deploy do
 
   after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-    end
+    # on roles(:web), in: :groups, limit: 3, wait: 10 do
+    # end
   end
 
   # task :copy_old_photos do
