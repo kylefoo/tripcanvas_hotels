@@ -1,0 +1,24 @@
+.modal--new_affiliate.modal.fade role="dialog"
+  .modal-dialog
+    .modal-content
+      = simple_form_for @hotel.affiliates.new, url: hotel_affiliates_path(@hotel), method: :post do |i|
+        .modal-header
+          button.close data-dismiss='modal' &times;
+        .modal-body
+          p.lead.text-center
+            | New Affiliate
+          span.help-block
+          .form-group
+            = i.input :affiliate_label, label: 'Affiliate Provider', as: :radio_buttons, collection: ['bookingdotcom','hotelquickly'], prompt: "Select partner"      
+          span.help-block
+          .form-group
+            = i.input :affiliate_id, as: :integer, label: 'Affiliate id'
+          span.help-block
+          .form-group
+            = i.input :code, as: :integer, label: 'Hotel code'
+          span.help-block
+          .form-group
+            = i.input :url, as: :string, label: 'Hotel url'
+        .modal-footer
+          .form-group
+            = i.button :submit

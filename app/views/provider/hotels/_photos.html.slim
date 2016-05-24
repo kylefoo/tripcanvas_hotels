@@ -1,14 +1,15 @@
-| Photos
-- if @hotel.images.present?
-  - @hotel.images.each do |img|
-    .field
-      = image_tag img.image_url(:thumb)
-    .field
-      = link_to 'Remove This', hotel_image_path(id: img.id, hotel_id: @hotel.id), data: {:confirm => 'Are you sure to remove this image?'}, method: :delete, class: 'fa fa-trash'
-= simple_form_for @hotel.images.new, url: hotel_images_path(@hotel), method: :post do |i|
-  = i.input :image, as: :file
-  = i.button :submit
-
+.row
+  - if @hotel.images.present?
+    - @hotel.images.each do |img|
+      .col-md-4
+        .field
+          = image_tag img.image_url(:small), class: "img-responsive"
+        .field
+          = link_to 'Remove This', hotel_image_path(id: img.id, hotel_id: @hotel.id), data: {:confirm => 'Are you sure to remove this image?'}, method: :delete, class: 'fa fa-trash'
+p
+= link_to 'New Photo', '#', data: { toggle: 'modal', target: '.modal--new_photo' }, class: 'btn btn-success'
+p
+= render 'new_photo_modal'
 javascript:
   $(document).on('upload:complete', 'form#new_image', function() {
     $(this).submit();

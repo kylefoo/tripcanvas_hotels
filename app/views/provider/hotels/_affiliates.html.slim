@@ -1,16 +1,24 @@
 - if @hotel.affiliates.present?
   - @hotel.affiliates.each do |a|
-    | #{a.affiliate_label} #{a.affiliate_id}
-    = link_to 'Delete This', hotel_affiliate_path(hotel_id: @hotel.id, id: a.id), data: {:confirm => 'Are you sure to remove this affiliate?'}, method: :delete, class: 'fa fa-trash'
-    p
-= simple_form_for @hotel.affiliates.new, url: hotel_affiliates_path(@hotel), method: :post do |i|
-  = i.input :affiliate_label, label: 'Affiliate Provider', as: :radio_buttons, collection: ['bookingdotcom','hotelquickly'], prompt: "Select partner"
-  = i.input :affiliate_id, as: :integer, label: 'Affiliate id'
-  = i.input :code, as: :integer, label: 'Hotel code'
-  = i.input :url, as: :string, label: 'Hotel url'
-  = i.button :submit
-
-javascript:
-  // $(document).on('upload:complete', 'form#new_image', function() {
-  //   $(this).submit();
-  // });
+    .panel.row-space-4
+      .panel-header
+        | #{a.affiliate_label} 
+      .panel-body.highlight-panel-header
+        .row
+          .col-xs-12
+            ul.list-unstyled
+              li 
+                strong Affiliate_id: 
+                |#{a.affiliate_id}
+              li 
+                strong Hotel_id: 
+                |#{a.code}
+              li
+                strong Hotel_url: 
+                | #{a.url}
+      .panel-footer style='padding: 10px;'
+        = button_to 'Delete This', hotel_affiliate_path(hotel_id: @hotel.id, id: a.id), data: {:confirm => 'Are you sure to remove this affiliate?'}, method: :delete, class: 'btn btn-danger'
+p
+= link_to 'New Affiliate', '#', data: { toggle: 'modal', target: '.modal--new_affiliate' }, class: 'btn btn-success'
+p
+= render 'new_affiliate_modal'

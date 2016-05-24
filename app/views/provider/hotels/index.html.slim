@@ -1,10 +1,8 @@
 = javascript_include_tag 'https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js'
-= javascript_include_tag 'https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'
-= javascript_include_tag 'https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js'
 .container
   h1 My hotels
 
-  table#hotels.table.table-striped.table-bordered.dt-responsive.nowrap cellspacing="0" width="100%"
+  table#hotels.table.table-striped.table-bordered cellspacing="0" width="100%"
     thead
       tr
         th Name
@@ -29,5 +27,12 @@
 
 javascript:
   $('#hotels').DataTable({
-    responsive: true
+    scrollY:        "500px",
+    scrollX:        true,
+    scrollCollapse: true,
+    paging:         false,
+    columnDefs: [
+        { width: '30%', targets: 2 }
+    ],
+    fixedColumns: true  
   });

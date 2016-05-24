@@ -1,0 +1,15 @@
+.modal--new_photo.modal.fade role="dialog"
+  .modal-dialog
+    .modal-content
+      = simple_form_for @hotel.images.new, url: hotel_images_path(@hotel), method: :post do |i|
+        .modal-header
+          button.close data-dismiss='modal' &times;
+        .modal-body
+          p.lead.text-center
+            | Add Photo
+          span.help-block
+          .form-group
+            = i.input :image, as: :file
+        .modal-footer
+          .form-group
+            = i.button :submit
