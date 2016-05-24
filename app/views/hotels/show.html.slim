@@ -8,8 +8,9 @@
     /   = link_to 'Edit', edit_provider_hotel_path(@hotel), class: 'btn btn-success'
     /   |  
     /   = link_to 'Back', hotels_path, class: 'btn btn-primary'
-p#notice = notice
-
+/ p#notice = notice
+#hotel_map
+  #map style=("width: 100%;\n height: 450px;")
 .page-container-responsive.space-6.space-top-4
   - if @related_articles.present?
     .row
@@ -17,3 +18,31 @@ p#notice = notice
         h4.row-space-4 Also featured on 
         - @related_articles.each do |article|
           = render 'shared/article', a: article
+
+javascript:
+  var geocoder, map;
+
+  function initMap() {
+      geocoder = new google.maps.Geocoder();
+      geocoder.geocode({
+          'address': "#{@hotel.address}"
+      }, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+              var isDraggable = $(document).width() > 480 ? true : false;
+              var myOptions = {
+                  zoom: 15,
+                  center: results[0].geometry.location,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP,
+                  scrollwheel: false,
+                  draggable: isDraggable
+              }
+              map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+              var marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location
+              });
+          }
+      });
+  }
+= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCyYS8b2R9ll2Zp2hXZvBCB5EUJttEHDS8&callback=initMap"

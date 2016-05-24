@@ -46,8 +46,8 @@ set :keep_releases, 2
 namespace :deploy do
 
   after :restart, :clear_cache do
-    # on roles(:web), in: :groups, limit: 3, wait: 10 do
-    # end
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    end
   end
   
   # task :copy_old_photos do
