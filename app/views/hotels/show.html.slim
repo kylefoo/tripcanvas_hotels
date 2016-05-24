@@ -2,8 +2,7 @@
 = render 'hotel_info'
 .panel style="background-color: #f3f3f3; min-height: 300px;"
   .container
-    .page-container-responsive style="padding: 20px;"
-      = @hotel.description
+    = @hotel.description
     .space-6.space-top-4
     / .pull-right
     /   = link_to 'Edit', edit_provider_hotel_path(@hotel), class: 'btn btn-success'
@@ -14,7 +13,7 @@ p#notice = notice
 .page-container-responsive.space-6.space-top-4
   - if @related_articles.present?
     .row
-      .col-lg-8
+      .col-lg-12
         h4.row-space-4 Also featured on 
         - @related_articles.each do |article|
           = render 'shared/article', a: article
