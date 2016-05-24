@@ -49,7 +49,18 @@ namespace :deploy do
     # on roles(:web), in: :groups, limit: 3, wait: 10 do
     # end
   end
-
+  
+  namespace :assets do
+    task :backup_manifest do
+      on roles(fetch(:assets_roles)) do
+        within release_path do
+          execute :cp,
+            release_path.join('public', fetch(:assets_prefix), '.sprockets-manifest*'),
+            release_path.join('assets_manifest_backup')
+        end
+      end
+    end
+  end
   # task :copy_old_photos do
   #     run "if [ -e #{previous_release}/public/uploads/* ]; then cp #{previous_release}/public/uploads/* #{current_release}/public/uploads/*; fi"
   # end
