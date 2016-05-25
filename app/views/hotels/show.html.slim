@@ -4,10 +4,6 @@
   .container
     = @hotel.description.html_safe
     .space-6.space-top-4
-    / .pull-right
-    /   = link_to 'Edit', edit_provider_hotel_path(@hotel), class: 'btn btn-success'
-    /   |  
-    /   = link_to 'Back', hotels_path, class: 'btn btn-primary'
 / p#notice = notice
 #hotel_map
   #map style=("width: 100%;\n height: 450px;")
