@@ -12,6 +12,9 @@ html
     .wrapper
       = render "users/sessions/login_modal" 
       = render "users/registrations/signup_modal" 
-      = render 'shared/navbar'
+      - if controller.controller_name == 'hotels' && controller.action_name == 'show'
+        = render 'shared/navbar_hotel'
+      - else
+        = render 'shared/navbar'
       .row
       = yield

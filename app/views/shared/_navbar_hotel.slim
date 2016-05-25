@@ -1,0 +1,23 @@
+//for landing page only
+.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to root_path, class: 'navbar-brand' do
+        = image_tag('tripcanvas_logo_color_320x130.png')
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.visible-xs
+        li = link_to 'Photos', '#js-carousel_service', class: "dove"
+        li = link_to 'About this hotel', '#hotel_summary', class: "dove"
+        li = link_to 'Article highlights', '#related_articles', class: "dove"
+        li = link_to 'Map', '#hotel_map', class: "dove"
+      .pull-left.hidden-xs style=('display:inline-block;')
+        ul.nav.navbar-nav
+          li = link_to 'Photos', '#js-carousel_service', class: "dove"
+          li = link_to 'About this hotel', '#hotel_summary', class: "dove"
+          li = link_to 'Article highlights', '#related_articles', class: "dove"
+          li = link_to 'Map', '#hotel_map', class: "dove"
