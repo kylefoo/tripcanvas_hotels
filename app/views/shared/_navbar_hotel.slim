@@ -21,3 +21,18 @@
           li = link_to 'About this hotel', '#hotel_summary', class: "dove"
           li = link_to 'Article highlights', '#related_articles', class: "dove"
           li = link_to 'Map', '#hotel_map', class: "dove"
+javascript:
+  $(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+  });
