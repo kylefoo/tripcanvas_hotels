@@ -35,13 +35,14 @@
                         .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
                           - if a.affiliate_label == 'bookingdotcom'
                             #bookdotcom style=('padding: 10px;')
-                              = link_to "#{a.url}?checkin=#{checkin}&checkout#{checkout}&selected_currency=USD&aid=#{a.affiliate_id}", target: :"_blank"
+                              = link_to "#{a.url}?checkin=#{checkin}&checkout=#{checkout}&selected_currency=USD&aid=#{a.affiliate_id}", target: :"_blank"
                                 = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 130px; height: 30px;')
                                 .bookdotcomprice style="display: inline;"
-                          - elsif a.affiliate_label == 'hotelquickly'
-                            #hotelquickly style=('padding: 10px;')
-                              = image_tag('hotelquickly/logo-hotelquickly.png', style: 'width: 150px; height: 30px;')
-                                .hotelquicklyprice
+                          - elsif a.affiliate_label == 'agoda'
+                            #agoda style=('padding: 10px;')
+                              = link_to "#{a.url}?checkin=#{checkin}&los=1&adults=2&rooms=1&cid=#{a.affiliate_id}", target: :"_blank"
+                                = image_tag('agoda/agoda-logo.png', style: 'width: 80px; height: 30px;')
+                                  .agodaprice
                       .row-space-2
 
 javascript:
