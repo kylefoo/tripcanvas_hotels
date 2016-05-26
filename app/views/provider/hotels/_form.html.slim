@@ -23,7 +23,7 @@
         = f.input :address, as: :url, required: true
     .col-sm-6
       .field
-        = f.input :phone_no, as: :tel, required: true, placeholder: '+1 (234) 567 890'
+        = f.input :phone_no, as: :tel, placeholder: '+1 (234) 567 890'
   .row.row-condensed.space-4
     .col-sm-6 
       .field
@@ -34,7 +34,7 @@
   .row.row-condensed.space-4
     .col-sm-12
       .field
-        = f.input :articles, as: :string
+        = f.input :articles
   .actions = f.button :submit, class: 'btn btn-success btn-block'
 
 = tinymce :alternate

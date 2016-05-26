@@ -42,7 +42,7 @@ class Provider::HotelsController < Provider::BaseController
   def update
     respond_to do |format|
       if @hotel.update(hotel_params)
-        format.html { redirect_to @hotel, notice: 'Hotel was successfully updated.' }
+        format.html { render :edit, notice: 'Hotel was successfully updated.' }
         format.json { render :show, status: :ok, location: @hotel }
       else
         format.html { render :edit }
@@ -69,7 +69,7 @@ class Provider::HotelsController < Provider::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:name, :city_id, :aasm_state, :slug, :description, :address, :email, :website, :phone_no, articles: [])
+      params.require(:hotel).permit(:name, :city_id, :aasm_state, :slug, :description, :address, :email, :website, :phone_no, :articles)
     end
     
     def set_category
