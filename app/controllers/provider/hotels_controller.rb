@@ -1,6 +1,6 @@
 class Provider::HotelsController < Provider::BaseController
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
-  before_action :set_category, only: [:edit]
+  before_action :set_category, only: [:edit]  
 
   def index
     @hotels = @provider.hotels
@@ -61,6 +61,30 @@ class Provider::HotelsController < Provider::BaseController
     end
   end
 
+  def add_articles
+    @hotel = @provider.hotels.find(params[:hotel_id])
+    @hotel.articles.push(params[:hotel][:article])
+    respond_to do |format|
+      if @hotel.save
+        format.html { redirect_to edit_provider_hotel_path(id: params[:hotel_id]), notice: 'added articles' }
+      else
+        format.html { render :edit, notice: 'fail to add articles' }
+      end
+    end
+  end
+
+  def remove_articles
+    @hotel = @provider.hotels.find(params[:hotel_id])
+    @hotel.articles.delete(params[:hotel][:article])
+    respond_to do |format|
+      if @hotel.save
+        format.html { redirect_to edit_provider_hotel_path(id: params[:hotel_id]), notice: 'removed articles' }
+      else
+        format.html { render :edit, notice: 'fail to add articles' }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hotel
@@ -69,7 +93,7 @@ class Provider::HotelsController < Provider::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:name, :city_id, :aasm_state, :slug, :description, :address, :email, :website, :phone_no, :articles)
+      params.require(:hotel).permit(:name, :city_id, :aasm_state, :slug, :description, :address, :email, :website, :phone_no, :article, :articles)
     end
     
     def set_category

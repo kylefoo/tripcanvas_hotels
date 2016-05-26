@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/glyph-fr/redactor-rails.git
+  revision: 2da8b5deac143f6a074d9d040040644e0659a783
+  specs:
+    redactor-rails (0.6.0)
+      mime-types
+      orm_adapter
+
+GIT
   remote: git@github.com:YotpoLtd/capistrano-gitflow.git
   revision: eb319ca933fc868decd05430a296066a54f30750
   specs:
@@ -285,6 +293,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   rails-assets-DataTables!
   rails-assets-lightgallery!
+  redactor-rails!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shrine

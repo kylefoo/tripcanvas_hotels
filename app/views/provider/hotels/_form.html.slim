@@ -12,7 +12,7 @@
         = f.input :name, required: true
     .col-sm-6
       .field
-        = f.input :city_id, collection: @cities, required: true, prompt: "Select city"
+        = f.association :city, as: :select, required: true, prompt: "Select city"
   .row.row-condensed.space-4
     .col-sm-12
       .field
@@ -31,10 +31,7 @@
     .col-sm-6 
       .field
         = f.input :email, as: :email
-  .row.row-condensed.space-4
+  .row.row-condensed.space-2
     .col-sm-12
-      .field
-        = f.input :articles
-  .actions = f.button :submit, class: 'btn btn-success btn-block'
-
+      .actions = f.button :submit, class: 'btn btn-success btn-block'
 = tinymce :alternate

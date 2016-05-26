@@ -7,7 +7,8 @@
     h3 Editing #{@hotel.name}
     hr
     == render 'form', path: provider_hotel_path
-    = button_to '+Photos', edit_provider_hotel_path(@hotel), method: :get, class: 'btn btn-warning btn-block', params: { c: 'photos' }
+    = link_to 'Edit Related Articles', '#', data: { toggle: 'modal', target: '.modal--edit_articles' }, class: 'btn btn-primary btn-block'
   = link_to 'Show', @hotel
   '|
   = link_to 'Back', provider_hotels_path
+= render 'edit_articles_modal'

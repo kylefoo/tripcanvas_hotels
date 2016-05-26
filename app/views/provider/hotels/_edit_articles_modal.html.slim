@@ -1,0 +1,30 @@
+.modal--edit_articles.modal.fade role="dialog"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close data-dismiss='modal' &times;
+      .modal-body
+        p.lead.text-center
+          | Related articles
+        - if @hotel.articles.present?
+          - @hotel.articles.each do |ar|
+            = form_for @hotel, url: provider_hotel_remove_articles_path(hotel_id: @hotel.id), method: :post do |c|
+              .row.row-condensed.space-4
+                .col-sm-12
+                  .input-group
+                    = c.text_field :article, value: ar, class: 'form-control', required: true
+                    span.input-group-btn
+                      button.btn.btn-danger
+                        | Delete
+        - else
+          .text-center
+            | Please add an article below
+      .modal-footer
+        = form_for @hotel, url: provider_hotel_add_articles_path(hotel_id: @hotel.id), method: :post do |c|
+          .row.row-condensed.space-4
+            .col-sm-12
+              .input-group
+                = c.text_field :article, placeholder: 'enter single article url', class: 'form-control', required: true
+                span.input-group-btn
+                  button.btn.btn-primary
+                    | Add

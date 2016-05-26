@@ -1,9 +1,11 @@
 class Hotel < ActiveRecord::Base
   belongs_to :provider
+  belongs_to :city
   has_many :affiliates
   has_many :images, as: :imageable
   accepts_nested_attributes_for :images, allow_destroy: true
   validates_presence_of :name, :city_id, :description, :address
+  attr_accessor :article
   include AASM
 
   aasm do

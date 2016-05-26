@@ -22,7 +22,10 @@ Rails.application.routes.draw do
   resources :cities, only: [:index, :show]
 
   namespace :provider do
-    resources :hotels
+    resources :hotels do
+      post 'add_articles'
+      post 'remove_articles'
+    end
   end
 
   namespace :admin do

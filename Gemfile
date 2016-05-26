@@ -79,3 +79,5 @@ group :development do
   gem 'capistrano-db-tasks', require: false
 end
 
+
+gem 'redactor-rails', github: 'glyph-fr/redactor-rails'
