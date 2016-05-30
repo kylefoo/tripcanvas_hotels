@@ -1,5 +1,5 @@
-= tinymce_assets
-= simple_form_for @hotel, url: provider_hotel_path(id: @hotel.id), method: :patch do |f|
+/ = tinymce_assets
+= simple_form_for @hotel, url: path do |f|
   - if @hotel.errors.any?
     #error_explanation
       h2 = "#{pluralize(@hotel.errors.count, "error")} prohibited this hotel from being saved:"
@@ -34,4 +34,4 @@
   .row.row-condensed.space-2
     .col-sm-12
       .actions = f.button :submit, class: 'btn btn-success btn-block'
-= tinymce :alternate
+/ = tinymce
