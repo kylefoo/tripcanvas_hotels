@@ -17,7 +17,7 @@
               .text-muted
                 | #{@hotel.phone_no} | #{mail_to @hotel.email}
               .text-muted
-                = link_to "http://#{@hotel.website}", target: "_blank" do 
+                = link_to "#{@hotel.website}", target: "_blank" do 
                   | Official website  
                   i.fa.fa-share-square-o
       .col-lg-4
