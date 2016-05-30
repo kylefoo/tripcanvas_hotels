@@ -6,7 +6,7 @@
   - else
     h3 Editing #{@hotel.name}
     hr
-    / = render 'edit_hotel_form'
+    = render 'edit_hotel_form'
     .row
       .col-md-4
         = link_to 'Edit Related Articles', '#', data: { toggle: 'modal', target: '.modal--edit_articles' }, class: 'btn btn-info btn-block'
