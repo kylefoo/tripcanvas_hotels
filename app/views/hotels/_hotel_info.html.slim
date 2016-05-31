@@ -4,19 +4,22 @@
   .page-container-responsive
     .row
       .col-lg-8
-        .row.row-space-4.row-space-top-4
-          .col-lg-9.space-sm-4.space-4
-            .text-center-sm.text-center-md
+        .row.row-space-4.row-space-top-6
+          .col-lg-12.space-sm-4
+            .text-center-sm.text-center-md.space-1
               span.h3.row-space-1
                 = @hotel.name
             .row-space-4.text-center-sm.text-center-md
-              .text-muted
-                = @hotel.address
+              .space-1.text-muted
+                |Address: #{@hotel.address} 
                 | - 
-                = link_to 'Show map', "https://maps.google.com?q=#{@hotel.address.gsub(/ /, '+')}", target: "_blank" 
-              .text-muted
-                | #{@hotel.phone_no} | #{mail_to @hotel.email}
-              .text-muted
+                = link_to 'Show Google map', "https://maps.google.com?q=#{@hotel.address.gsub(/ /, '+')}", target: "_blank"
+              .space-1
+                |Phone:  
+                =link_to "#{@hotel.phone_no} ", "tel:#{@hotel.phone_no}"
+                | | Email: 
+                | #{mail_to @hotel.email}
+              .space-1.text-muted
                 = link_to "#{@hotel.website}", target: "_blank" do 
                   | Official website  
                   i.fa.fa-share-square-o
@@ -25,8 +28,9 @@
           #call_to_action.noFixed 
             .panel style="border-style: none;"
               .panel-body.panel-book style="padding: 10px 10px 0 10px; background-color: #666666; border-style: hidden; height: 38px;"
-                .h4.text-center style="color: white;"
-                  |Find the best price online?
+                .pull-left.text-special.h4.text-center style="color: white;"
+                  |Price from 
+                .pull-right.text-special #{checkin} -  #{checkout}
               .panel-body.panel-light style="border-width: 1px; border-style: solid; border-color: #666666;"
                 #booking_container.row-space-top-3
                   - if @hotel.affiliates.present?
@@ -34,15 +38,25 @@
                       .row
                         .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
                           - if a.affiliate_label == 'bookingdotcom'
-                            #bookdotcom style=('padding: 10px;')
+                            #bookdotcom style=('padding: 15px;')
                               = link_to "#{a.url}?checkin=#{checkin}&checkout=#{checkout}&selected_currency=USD&aid=#{a.affiliate_id}", target: :"_blank"
-                                = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 130px; height: 30px;')
-                                .bookdotcomprice style="display: inline;"
+                                .ota
+                                  .name
+                                    strong = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 100px; height: 20px;')
+                                .price style="display: block;"
+                                  strong.bookdotcomprice 
+                                  .arrow
+                                    i.fa.fa-angle-right.fa-lg aria-hidden="true"
                           - elsif a.affiliate_label == 'agoda'
-                            #agoda style=('padding: 10px;')
+                            #agoda style=('padding: 15px;')
                               = link_to "#{a.url}?checkin=#{checkin}&los=1&adults=2&rooms=1&cid=#{a.affiliate_id}", target: :"_blank"
-                                = image_tag('agoda/agoda-logo.png', style: 'width: 80px; height: 30px;')
-                                  .agodaprice
+                                .ota
+                                  .name
+                                    strong = image_tag('agoda/agoda-logo.png', style: 'width: 48px; height: 20px;')
+                                .price style="display: block;"
+                                  strong.agodaprice
+                                  .arrow
+                                    i.fa.fa-angle-right.fa-lg aria-hidden="true"
                       .row-space-2
 
 javascript:

@@ -21,6 +21,14 @@
           li = link_to 'About this hotel', '#hotel_summary', class: "dove"
           li = link_to 'Article highlights', '#related_articles', class: "dove"
           li = link_to 'Map', '#hotel_map', class: "dove"
+.subnav.section-titles.hide-md data-sticky="true" data-transition-at="#hotel_summary" aria-hidden="true"
+  .page-container-responsive
+    ul.subnav-list
+      li = link_to 'Photos', '#js-carousel_service', class: "subnav-item"
+      li = link_to 'About this hotel', '#hotel_summary', class: "subnav-item"
+      li = link_to 'Map', '#hotel_map', class: "subnav-item"
+      li = link_to 'Article highlights', '#related_articles', class: "subnav-item"
+      
 javascript:
   $(function() {
   $('a[href*="#"]:not([href="#"])').click(function() {

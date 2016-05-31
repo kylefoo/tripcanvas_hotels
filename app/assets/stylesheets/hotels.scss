@@ -44,6 +44,32 @@
         position: relative;
         top: 1px
     }
+    .panel-body.panel-book {
+        padding-top: 6px;
+        padding-bottom: 0px;
+        background-color: #707070;
+        color: #fff;
+        margin-top: -1px;
+        height: 40px;
+    }
+    .price {
+        position: absolute;
+        right: 0;
+        top: 12px;
+        padding-right: 18px;
+        margin-left: 5px;
+        line-height: 24px;
+        text-align: center;
+        font-size: 14px;
+        color: #ff7000;
+    }
+    .price .arrow {
+        position: absolute;
+        padding-right: 5px;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+    }
     // @media (max-width: 1099px) {
     //     #call_to_action_form {
     //         margin-top: 0
