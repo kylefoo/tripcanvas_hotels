@@ -65,7 +65,6 @@ javascript:
       var y = $(this).scrollTop();
       //If the current Y is bigger than the element. (you scrolled beyond the element)
       if(y >= stopscroll.top){
-        console.log($(".subnav"));
         $(".fixed").removeClass('fixed').addClass("noFixed").css({'margin-top':'-40px','top':stopscroll.top-420.5 });
         $(".subnav").removeAttr("aria-hidden", "true").attr("aria-hidden", "false");
       } else if(y >= startscroll.top-40){
