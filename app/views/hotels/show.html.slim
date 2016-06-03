@@ -65,10 +65,12 @@ javascript:
       var y = $(this).scrollTop();
       //If the current Y is bigger than the element. (you scrolled beyond the element)
       if(y >= stopscroll.top){
-        $(".fixed").removeClass('fixed').addClass("noFixed").css({'margin-top':'-40px','top':stopscroll.top-420.5 });
+        //$(".fixed").removeClass('fixed').addClass("noFixed").css({'margin-top':'-40px','top':stopscroll.top-420.5 });
+        $(".noFixed").removeClass('noFixed').addClass("fixed").css({'margin-top':'-40px','top':'40px'});
         $(".subnav").removeAttr("aria-hidden", "true").attr("aria-hidden", "false");
       } else if(y >= startscroll.top-40){
         $(".noFixed").removeClass('noFixed').addClass("fixed").css({'margin-top':'-40px','top':'40px'});
+        $(".subnav").removeAttr("aria-hidden", "true").attr("aria-hidden", "false");
       } else{
         $(".subnav").removeAttr("aria-hidden", "false").attr("aria-hidden", "true");
         $(".fixed").removeClass('fixed').addClass("noFixed").css({'margin-top':'-40px','top':'0px'});

@@ -1,0 +1,13 @@
+.col-xs-12.col-sm-4.col-md-6.col-lg-4  
+  .card-container
+    .card
+      .photo
+        = link_to a.url, target: "_blank"
+          .fill style=("background-image:url('#{image_url(a.images.first)}');")
+      .details
+        h3.h5.text-truncate.article-name title=a.title
+          = link_to a.title, a.url, target: "_blank"
+        .media.clearfix style=("margin:0;")
+          - if a.description
+            .text-muted
+              = strip_tags(a.description.html_safe.truncate(75))

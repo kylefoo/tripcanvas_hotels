@@ -26,38 +26,46 @@
       .col-lg-4
         #call_to_action_form
           #call_to_action.noFixed 
-            .panel style="border-style: none;"
-              .panel-body.panel-book style="padding: 10px 10px 0 10px; background-color: #666666; border-style: hidden; height: 38px;"
+            .hotel_price style="border-style: none;"
+              .panel-body.panel-book style="padding: 10px 10px 0 10px; background-color: #3c3f40; border-style: hidden; height: 38px;"
                 .pull-left.text-special.h4.text-center style="color: white;"
                   |Price from 
                 .pull-right.text-special #{checkin} -  #{checkout}
-              .panel-body.panel-light style="border-width: 1px; border-style: solid; border-color: #666666;"
-                #booking_container.row-space-top-3
-                  - if @hotel.affiliates.present?
-                    - @hotel.affiliates.each do |a|
-                      .row
-                        .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
-                          - if a.affiliate_label == 'bookingdotcom'
-                            #bookdotcom style=('padding: 15px;')
-                              = link_to "#{a.url}?checkin=#{checkin}&checkout=#{checkout}&selected_currency=USD&aid=#{a.affiliate_id}", target: :"_blank"
-                                .ota
-                                  .name
-                                    strong = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 100px; height: 20px;')
-                                .price style="display: block;"
-                                  strong.bookdotcomprice 
-                                  .arrow
-                                    i.fa.fa-angle-right.fa-lg aria-hidden="true"
-                          - elsif a.affiliate_label == 'agoda'
-                            #agoda style=('padding: 15px;')
-                              = link_to "#{a.url}?checkin=#{checkin}&los=1&adults=2&rooms=1&cid=#{a.affiliate_id}", target: :"_blank"
-                                .ota
-                                  .name
-                                    strong = image_tag('agoda/agoda-logo.png', style: 'width: 48px; height: 20px;')
-                                .price style="display: block;"
-                                  strong.agodaprice
-                                  .arrow
-                                    i.fa.fa-angle-right.fa-lg aria-hidden="true"
-                      .row-space-2
+              .panel
+                .panel-body.panel-light
+                  #booking_container.row-space-top-3
+                    - if @hotel.affiliates.present?
+                      - @hotel.affiliates.each do |a|
+                        .row
+                          .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
+                            - if a.affiliate_label == 'bookingdotcom'
+                              #bookdotcom style=('padding: 15px;')
+                                = link_to "#{a.url}?checkin=#{checkin}&checkout=#{checkout}&selected_currency=USD&aid=#{a.affiliate_id}", target: :"_blank"
+                                  .ota
+                                    .name
+                                      strong = image_tag('bookdotcom/booking_logo_retina.png', style: 'width: 100px; height: 20px;')
+                                  .price style="display: block;"
+                                    strong.bookdotcomprice 
+                                    .arrow
+                                      i.fa.fa-angle-right.fa-lg aria-hidden="true"
+                            - elsif a.affiliate_label == 'agoda'
+                              #agoda style=('padding: 15px;')
+                                = link_to "#{a.url}?checkin=#{checkin}&los=1&adults=2&rooms=1&cid=#{a.affiliate_id}", target: :"_blank"
+                                  .ota
+                                    .name
+                                      strong = image_tag('agoda/agoda-logo.png', style: 'width: 48px; height: 20px;')
+                                  .price style="display: block;"
+                                    strong.agodaprice
+                                    .arrow
+                                      i.fa.fa-angle-right.fa-lg aria-hidden="true"
+                        .row-space-2
+              .panel.space-top-6.space-md-3.hide-sm
+                .panel-body.panel-light
+                  - if @related_articles.present?
+                    .row
+                      .col-lg-12
+                        - @related_articles.each do |article|
+                          = render 'shared/guide', a: article
 
 javascript:
   var checkin = "#{(Date.current + 14).to_date.strftime('%Y-%m-%d')}" ;
