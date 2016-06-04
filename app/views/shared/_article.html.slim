@@ -2,8 +2,8 @@
   .card-container
     .card
       = link_to a.url, target: "_blank", class: "link-reset"
-        .photo 
-          img.fill src=("#{image_url(a.images.first)}")
+        .photo
+          img.fill.img-responsive src="#{image_url(a.images.first)}"
         .details
           h3.h5.text-truncate.article-name title=a.title
             strong #{a.title}
