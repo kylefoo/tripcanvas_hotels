@@ -28,7 +28,7 @@ class Provider::HotelsController < Provider::BaseController
     
     respond_to do |format|
       if @hotel.save
-        format.html { redirect_to @hotel, notice: 'Hotel was successfully created.' }
+        format.html { redirect_to edit_provider_hotel_path(id: @hotel.id), notice: 'Hotel was successfully created.' }
         format.json { render :show, status: :created, location: @hotel }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class Provider::HotelsController < Provider::BaseController
   def destroy
     @hotel.destroy
     respond_to do |format|
-      format.html { redirect_to hotels_url, notice: 'Hotel was successfully destroyed.' }
+      format.html { redirect_to provider_hotels_url, notice: 'Hotel was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

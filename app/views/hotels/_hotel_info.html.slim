@@ -59,13 +59,20 @@
                                     .arrow
                                       i.fa.fa-angle-right.fa-lg aria-hidden="true"
                         .row-space-2
-              .panel.space-top-6.space-md-3.hide-sm
+              .panel.space-top-6.space-md-3
                 .panel-body.panel-light
-                  - if @related_articles.present?
+                  #tourplus_container.row-space-top-3
                     .row
-                      .col-lg-12
-                        - @related_articles.each do |article|
-                          = render 'shared/guide', a: article
+                      .col-sm-12 style=('padding:0;background-color: #eee; height: 50px;')
+                          #tourplus style=('padding: 15px;')
+                            = link_to "https://www.tourplus.my", target: :"_blank"
+                              .ota
+                                .name
+                                  strong = image_tag('tp_logo.png', style: 'width: 110px; height: 23px;')
+                              .price style="display: block;"
+                                strong.tourplusprice Find Local Guide
+                                .arrow
+                                  i.fa.fa-angle-right.fa-lg aria-hidden="true"
 
 javascript:
   var checkin = "#{(Date.current + 14).to_date.strftime('%Y-%m-%d')}" ;
