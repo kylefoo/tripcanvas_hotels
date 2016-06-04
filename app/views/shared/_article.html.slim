@@ -1,13 +1,13 @@
 .col-xs-12.col-sm-4.col-md-6.col-lg-4  
   .card-container
     .card
-      = link_to a.url, target: "_blank"
-        .photo      
+      = link_to a.url, target: "_blank", class: "link-reset"
+        .photo 
           img.fill src=("#{image_url(a.images.first)}")
-      .details
-        h3.h5.text-truncate.article-name title=a.title
-          | #{a.title}
-        .media.clearfix style=("margin:0;")
-          - if a.description
-            .text-muted
-              = strip_tags(a.description.html_safe.truncate(75))
+        .details
+          h3.h5.text-truncate.article-name title=a.title
+            strong #{a.title}
+          .media.clearfix style=("margin:0;")
+            - if a.description
+              .text-muted
+                = strip_tags(a.description.html_safe.truncate(75))
