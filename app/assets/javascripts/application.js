@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require lightgallery
 //= require growlyflash
+//= require redactor-rails
 //= require_tree .
