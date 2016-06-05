@@ -39,7 +39,6 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'aasm', '4.10.0'
 gem 'simple_form'
 gem 'opengraph_parser'
-gem 'tinymce-rails'
 
 #image-process
 gem 'fastimage'
@@ -81,4 +80,4 @@ group :development do
 end
 
 
-gem 'redactor-rails', github: 'glyph-fr/redactor-rails'
+gem 'redactor-rails'
