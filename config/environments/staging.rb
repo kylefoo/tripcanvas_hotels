@@ -15,6 +15,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.assets.debug = true
   config.assets.raise_runtime_errors = true
+  config.assets.compress = false
   config.action_controller.asset_host = "staging.tripcanvas.co"
   config.force_ssl = true
   # Don't care if the mailer can't send.

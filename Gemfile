@@ -46,6 +46,7 @@ gem 'image_processing'
 gem 'mini_magick'
 gem 'shrine'
 gem 'carrierwave'
+gem 'redactor-rails'
 
 # js-assets
 source 'https://rails-assets.org' do
@@ -53,8 +54,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-DataTables'
 end
 
-group :staging, :test do
+group :staging, :production do
   gem 'passenger', '5.0.11'
+  gem 'rails_12factor'
 end
 
 group :development, :test do
@@ -80,6 +82,3 @@ group :development do
   gem 'capistrano-db-tasks', require: false
 end
 
-
-gem 'redactor-rails'
-gem 'rails_12factor'
