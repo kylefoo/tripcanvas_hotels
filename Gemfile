@@ -82,3 +82,4 @@ end
 
 
 gem 'redactor-rails'
+gem 'rails_12factor'
