@@ -45,6 +45,7 @@ gem 'fastimage'
 gem 'image_processing'
 gem 'mini_magick'
 gem 'shrine'
+gem 'carrierwave'
 
 # js-assets
 source 'https://rails-assets.org' do
