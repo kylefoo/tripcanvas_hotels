@@ -1,4 +1,3 @@
-/ = tinymce_assets
 = simple_form_for @hotel, url: path do |f|
   - if @hotel.errors.any?
     #error_explanation
@@ -16,7 +15,7 @@
   .row.row-condensed.space-4
     .col-sm-12
       .field
-        = f.input :description, as: :text, input_html: {class: "redactor", rows: 50}
+        = f.input :description, as: :text, input_html: {class: "redactor", rows: 20}
   .row.row-condensed.space-4
     .col-sm-6 
       .field
@@ -34,4 +33,8 @@
   .row.row-condensed.space-2
     .col-sm-12
       .actions = f.button :submit, class: 'btn btn-success btn-block'
-/ = tinymce
+
+/ javascript:
+/   $('.redactor').redactor({
+/       buttons: ['format', 'bold', 'italic', 'deleted', 'lists', 'image', 'link', 'horizontalrule']
+/   });

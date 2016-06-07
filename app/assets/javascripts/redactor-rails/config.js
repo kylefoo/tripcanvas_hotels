@@ -12,8 +12,8 @@ window.init_redactor = function(){
         // "plugins": ['fontsize', 'fontcolor', 'fontfamily', 'fullscreen', 'textdirection', 'clips'],
         "imageUpload":"/redactor_rails/pictures?" + params,
         "imageGetJson":"/redactor_rails/pictures",
-        "fileUpload":"/redactor_rails/documents?" + params,
-        "fileGetJson":"/redactor_rails/documents",
+        // "fileUpload":"/redactor_rails/documents?" + params,
+        // "fileGetJson":"/redactor_rails/documents",
         "path":"/assets/redactor-rails",
         "css":"style.css"
       });
