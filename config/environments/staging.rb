@@ -3,7 +3,7 @@ Rails.application.configure do
   config.eager_load = true
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.serve_static_files = false
+  config.serve_static_files = true
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :sass
   config.assets.compile = false
@@ -17,7 +17,7 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
   config.assets.compress = false
   config.action_controller.asset_host = "staging.tripcanvas.co"
-  config.force_ssl = true
+  config.force_ssl = false
   # Don't care if the mailer can't send.
   config.action_mailer.default_url_options = { host: 'tripcanvas.co'}
   config.action_mailer.raise_delivery_errors = false
