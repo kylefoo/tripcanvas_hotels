@@ -6,7 +6,7 @@ Rails.application.configure do
   config.serve_static_files = false
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :sass
-  config.assets.compile = false
+  config.assets.compile = true
   config.assets.digest = true
   config.log_level = :info
   config.i18n.fallbacks = true
