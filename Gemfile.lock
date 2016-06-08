@@ -137,6 +137,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    metamagic (3.1.7)
+      rails (>= 3.0.0)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
@@ -292,6 +294,7 @@ DEPENDENCIES
   image_processing
   jbuilder (~> 2.0)
   jquery-rails
+  metamagic
   mini_magick
   opengraph_parser
   passenger (= 5.0.11)

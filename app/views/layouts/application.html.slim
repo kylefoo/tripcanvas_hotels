@@ -8,6 +8,8 @@ html
     = csrf_meta_tags 
     = favicon_link_tag 'mts-favicon.png'
     = Gon::Base.render_data
+    = render 'layouts/meta'
+    
   body
     .wrapper
       = render "users/sessions/login_modal" 
