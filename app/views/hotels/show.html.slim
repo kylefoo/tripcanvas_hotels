@@ -1,3 +1,4 @@
+= stylesheet_link_tag 'https://indonesia.tripcanvas.co/hotels.css'
 = render 'gallery'
 = render 'hotel_info'
 = render 'meta'
@@ -20,7 +21,7 @@ javascript:
   - if @related_articles.present?
     .row
       .col-lg-12
-        h4.row-space-4 Also featured on 
+        h4.row-space-4 Article highlights 
         - @related_articles.each do |article|
           = render 'shared/article', a: article
 #hotel_map
