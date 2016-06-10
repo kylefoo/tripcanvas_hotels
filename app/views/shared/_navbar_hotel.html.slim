@@ -24,10 +24,10 @@
 .subnav.section-titles.hide-md data-sticky="true" data-transition-at="#hotel_summary" aria-hidden="true"
   .page-container-responsive
     ul.subnav-list
-      li = link_to 'Photos', '#js-carousel_service', class: "subnav-item"
-      li = link_to 'About this hotel', '#hotel_summary', class: "subnav-item"
-      li = link_to 'Article highlights', '#related_articles', class: "subnav-item"
-      li = link_to 'Map', '#hotel_map', class: "subnav-item"
+      li = link_to 'Photos', '#js-carousel_service', class: "subnav-item", id: "photoButton", aria: { selected: 'false' }
+      li = link_to 'About this hotel', '#hotel_summary', class: "subnav-item", id: "summaryButton", aria: { selected: 'false' }
+      li = link_to 'Article highlights', '#related_articles', class: "subnav-item", id: "articleButton", aria: { selected: 'false' }
+      li = link_to 'Map', '#hotel_map', class: "subnav-item", id: "mapButton", aria: { selected: 'false' }
       
 javascript:
   $(function() {

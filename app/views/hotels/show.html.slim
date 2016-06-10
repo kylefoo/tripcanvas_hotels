@@ -56,18 +56,26 @@ javascript:
 
   // store the position of the element in position
   var startscroll = $('#hotel_summary').offset();
-  var details = $('#details').offset();
+  var articles = $('#related_articles').offset();
   var stopscroll = $('#hotel_map').offset();
   // on scrolling of the document do something
   $(document).scroll(function () {
       //the current height
       var y = $(this).scrollTop();
       //If the current Y is bigger than the element. (you scrolled beyond the element)
-      if(y >= stopscroll.top){
+      if(y >= stopscroll.top-40){
         //$(".fixed").removeClass('fixed').addClass("noFixed").css({'margin-top':'-40px','top':stopscroll.top-420.5 });
+        $( ".subnav-item" ).attr("aria-selected", "false");
+        $( ".subnav-item[id='mapButton']" ).attr("aria-selected", "true");
         $(".noFixed").removeClass('noFixed').addClass("fixed").css({'margin-top':'-40px','top':'40px'});
         $(".subnav").removeAttr("aria-hidden", "true").attr("aria-hidden", "false");
       } else if(y >= startscroll.top-40){
+        $( ".subnav-item" ).attr("aria-selected", "false");
+        $( ".subnav-item[id='summaryButton']" ).attr("aria-selected", "true");
+        if (y >= articles.top-40){
+          $( ".subnav-item" ).attr("aria-selected", "false");
+          $( ".subnav-item[id='articleButton']" ).attr("aria-selected", "true");
+        }
         $(".noFixed").removeClass('noFixed').addClass("fixed").css({'margin-top':'-40px','top':'40px'});
         $(".subnav").removeAttr("aria-hidden", "true").attr("aria-hidden", "false");
       } else{
@@ -76,6 +84,7 @@ javascript:
       }
   });
 = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCyYS8b2R9ll2Zp2hXZvBCB5EUJttEHDS8&callback=initMap"
+
 
 javascript:
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

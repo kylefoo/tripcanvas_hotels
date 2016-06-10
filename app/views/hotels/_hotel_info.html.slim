@@ -1,3 +1,4 @@
+script async src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
 - checkin = (Date.current + 14).to_date.strftime("%Y-%m-%d")
 - checkout = (Date.current + 15).to_date.strftime("%Y-%m-%d")
 #hotel_summary.panel
@@ -73,6 +74,10 @@
                                 strong.tourplusprice Find Local Guide
                                 .arrow
                                   i.fa.fa-angle-right.fa-lg aria-hidden="true"
+                    .row
+                      .col-sm-12 style=('padding:0;background-color: #eee; height: auto;')
+                          #adsense style=('padding: 15px;')
+                            ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8467960323308486" data-ad-slot="3552610255" data-ad-format="auto"
 
 javascript:
   var checkin = "#{(Date.current + 14).to_date.strftime('%Y-%m-%d')}" ;
@@ -105,3 +110,6 @@ javascript:
       }
     });  
   };
+
+  (adsbygoogle = window.adsbygoogle || []).push({});
+
