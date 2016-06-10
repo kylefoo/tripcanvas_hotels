@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 html
   head
-    title TripcanvasHotels
     = growlyflash_static_notices
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true 
@@ -9,7 +8,7 @@ html
     = favicon_link_tag 'mts-favicon.png'
     = Gon::Base.render_data
     = render 'layouts/meta'
-    
+
   body
     .wrapper
       = render "users/sessions/login_modal" 
