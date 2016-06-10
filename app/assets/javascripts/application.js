@@ -18,4 +18,5 @@
 //= require growlyflash
 //= require redactor-rails
 //= require redactor-rails/plugins
-//= require_tree .
+//= require_tree ./redactor-rails
+//= require_tree ./vendors
