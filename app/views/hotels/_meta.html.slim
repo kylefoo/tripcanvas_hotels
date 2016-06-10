@@ -1,5 +1,5 @@
-- meta title: "#{@hotel.name} - Tripcanvas.co", keywords: "#{@hotel.name}"
-- meta og: {title: "#{@hotel.name} - Tripcanvas.co", site_name: "Tripcanvas", url: "#{request.original_url}"}
+- meta title: "#{@hotel.name} - TripCanvas Hotels", keywords: "#{@hotel.name}"
+- meta og: {title: "#{@hotel.name} - TripCanvas Hotels", site_name: "Tripcanvas", url: "#{request.original_url}"}
 - if @hotel.description.present?
   - meta description: "#{strip_tags(@hotel.description.truncate(150)) }"
   - meta og: {description:"#{strip_tags(@hotel.description.truncate(150)) }"}
