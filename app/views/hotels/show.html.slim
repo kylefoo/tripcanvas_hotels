@@ -20,10 +20,10 @@ javascript:
 #related_articles.page-container-responsive.space-6.space-top-4
   - if @related_articles.present?
     .row
-      .col-lg-12
+      .col-lg-8
         h4.row-space-4 Article highlights 
         - @related_articles.each do |article|
-          = render 'shared/article', a: article
+          = render partial: 'shared/article', locals: {a: article, h: @hotel}
 #hotel_map
   #map style=("width: 100%;\n height: 450px;")
 
@@ -54,11 +54,9 @@ javascript:
       });
   }
 
-  // store the position of the element in position
   var startscroll = $('#hotel_summary').offset();
   var articles = $('#related_articles').offset();
   var stopscroll = $('#hotel_map').offset();
-  // on scrolling of the document do something
   $(document).scroll(function () {
       //the current height
       var y = $(this).scrollTop();

@@ -1,13 +1,24 @@
-.col-xs-12.col-sm-4.col-md-6.col-lg-4  
-  .card-container
-    .card
-      = link_to a.url, target: "_blank", class: "link-reset"
-        .photo
-          img.fill.img-responsive src="#{image_url(a.images.first)}"
-        .details
-          h3.h5.text-truncate.article-name title=a.title
-            strong #{a.title}
-          .media.clearfix style=("margin:0;")
-            - if a.description
-              .text-muted
-                = strip_tags(a.description.html_safe.truncate(75))
+/ .col-xs-12.col-sm-4.col-md-6.col-lg-4  
+/   .card-container
+/     .card
+/       = link_to a.url, target: "_blank", class: "link-reset"
+/         .photo
+/           img.fill.img-responsive src="#{image_url(a.images.first)}"
+/         .details
+/           h3.h5.text-truncate.article-name title=a.title
+/             strong #{a.title}
+/           .media.clearfix style=("margin:0;")
+/             - if a.description
+/               .text-muted
+/                 = strip_tags(a.description.html_safe.truncate(75))
+
+.card-segment-body.list-unstyled-card
+  .inlinerec-source-card
+    = link_to a.url, target: "_blank"
+      .inlinerec-thumb-card style="background-image: url('#{image_url(a.images.first)}');"
+      .inlinerec-content-card
+        h4 #{a.title}
+        p.source-card
+          span.favicon
+            i.fa.fa-globe
+          |TripCanvas › #{h.city.country.name} › #{h.city.name}
