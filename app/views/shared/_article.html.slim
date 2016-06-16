@@ -11,9 +11,8 @@
 /             - if a.description
 /               .text-muted
 /                 = strip_tags(a.description.html_safe.truncate(75))
-
-.card-segment-body.list-unstyled-card
-  .inlinerec-source-card
+.card-segment-body.list-unstyled-card 
+  .inlinerec-source-card 
     = link_to a.url, target: "_blank"
       .inlinerec-thumb-card style="background-image: url('#{image_url(a.images.first)}');"
       .inlinerec-content-card
