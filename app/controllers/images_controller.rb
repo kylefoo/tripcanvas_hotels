@@ -36,6 +36,6 @@ class ImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit(:hotel_id, :image, :remove_image)
+    params.require(:image).permit(:hotel_id, :image, :remove_image, :caption)
   end
 end

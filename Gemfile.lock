@@ -178,6 +178,7 @@ GEM
     rails-assets-jquery (2.2.3)
     rails-assets-lightgallery (1.2.18)
       rails-assets-jquery (>= 1.7.0)
+    rails-assets-voidberg--html5sortable (0.2.0)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -302,6 +303,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   rails-assets-DataTables!
   rails-assets-lightgallery!
+  rails-assets-voidberg--html5sortable!
   rails_12factor
   redactor-rails
   sass-rails (~> 5.0)

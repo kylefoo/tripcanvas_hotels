@@ -53,6 +53,7 @@ gem 'redactor-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-lightgallery'
   gem 'rails-assets-DataTables'
+  gem 'rails-assets-voidberg--html5sortable'
 end
 
 group :staging, :production do

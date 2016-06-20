@@ -1,17 +1,19 @@
 .row
-  - if @hotel.images.present?
-    - @hotel.images.each do |img|
-      .col-md-4
-        .field
-          = image_tag img.image_url(:small), class: "img-responsive"
-        .field
-          = link_to 'Remove This', hotel_image_path(id: img.id, hotel_id: @hotel.id), data: {:confirm => 'Are you sure to remove this image?'}, method: :delete, class: 'fa fa-trash'
+  .col-12
+    = form_for @image_arrangement_form, url: image_arrangement_provider_hotel_path, method: :patch, remote: true do |f|
+      = f.hidden_field :hotel_id, value: @hotel.id
+      ul.sortable__list.js-sortable
+        = f.fields_for :image do |img|
+          li.sortable__item
+            .delete-photo-btn.overlay-btn.js-delete-photo-btn
+              i = link_to '', hotel_image_path(id: img.object.id, hotel_id: @hotel.id), data: {:confirm => 'Are you sure to remove this image?'}, method: :delete, class: 'fa fa-trash'
+            = image_tag img.object.image_url(:small), class: "img-responsive"
+            = img.hidden_field :position
+            = img.text_area :caption
 p
 = link_to 'New Photo', '#', data: { toggle: 'modal', target: '.modal--new_photo' }, class: 'btn btn-success'
 p
 = render 'new_photo_modal'
-javascript:
-  $(document).on('upload:complete', 'form#new_image', function() {
-    $(this).submit();
-  });
-  
+
+coffee:
+  TC.sortable.servicePhoto.init()

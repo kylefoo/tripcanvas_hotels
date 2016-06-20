@@ -15,8 +15,11 @@
 //= require DataTables
 //= require bootstrap
 //= require lightgallery
+//= require html.sortable
 //= require growlyflash
 //= require redactor-rails
 //= require redactor-rails/plugins
+//= require initializer
 //= require_tree ./redactor-rails
 //= require_tree ./vendors
+//= require_tree ./modules

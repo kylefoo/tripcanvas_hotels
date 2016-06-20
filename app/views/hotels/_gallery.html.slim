@@ -6,9 +6,14 @@ header#js-carousel_service.js-carousel.carousel.slide data-ride="carousel" data-
   - else
     .carousel-inner
       - @hotel.images.each_with_index do |p, i|
-        .item class="#{'active' if i == 0}" data-src='#{p.image_url(:original)}' 
-          = link_to image_path(p.image_url(:original)) do
-            .fill style="background-image:url('#{p.image_url(:original)}');"
+        - if p.caption.nil?
+          .item class="#{'active' if i == 0}" data-src='#{p.image_url(:original)}' 
+            = link_to image_path(p.image_url(:original)) do
+              .fill style="background-image:url('#{p.image_url(:original)}');"
+        - else
+          .item class="#{'active' if i == 0}" data-src='#{p.image_url(:original)}' data-sub-html="#{p.caption}"
+            = link_to image_path(p.image_url(:original)) do
+              .fill style="background-image:url('#{p.image_url(:original)}');"          
     - if @hotel.images.count > 1
       = link_to '#', data: { slide: 'prev', target: '#js-carousel_service' }, class: 'carousel-control left' do
         span.glyphicon.glyphicon-chevron-left

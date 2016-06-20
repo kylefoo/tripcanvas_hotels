@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605202313) do
+ActiveRecord::Schema.define(version: 20160620082735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,8 +66,9 @@ ActiveRecord::Schema.define(version: 20160605202313) do
     t.string   "imageable_type"
     t.string   "caption"
     t.text     "image_data"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "position",       default: 0
   end
 
   create_table "redactor_assets", force: :cascade do |t|

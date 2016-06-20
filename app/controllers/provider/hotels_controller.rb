@@ -16,6 +16,7 @@ class Provider::HotelsController < Provider::BaseController
   def edit
     @cities = City.all
     @countries = Country.all
+    @image_arrangement_form = ImageArrangementForm.new(hotel_id: @hotel.id)
   end
 
   def show
@@ -85,6 +86,16 @@ class Provider::HotelsController < Provider::BaseController
     end
   end
 
+  def image_arrangement
+    @image_arrangement_form = ImageArrangementForm.new(image_arrangement_params)
+
+    if @image_arrangement_form.save
+      redirect_to :back
+    else
+      redirect_to root_path
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hotel
@@ -102,5 +113,8 @@ class Provider::HotelsController < Provider::BaseController
         when 'affiliates' then 'affiliates'
       end
     end
-
+    
+    def image_arrangement_params
+      params.require(:image_arrangement_form).permit(:hotel_id, image_attributes: [:id, :position, :caption])
+    end
 end

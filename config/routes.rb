@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :hotels do
       post 'add_articles'
       post 'remove_articles'
+      patch :image_arrangement, on: :member
     end
   end
 
