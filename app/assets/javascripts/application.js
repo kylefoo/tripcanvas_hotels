@@ -15,6 +15,7 @@
 //= require DataTables
 //= require bootstrap
 //= require lightgallery
+//= require lightgallery/lg-thumbnail.js
 //= require html.sortable
 //= require growlyflash
 //= require redactor-rails
