@@ -18,9 +18,7 @@
 //= require lightgallery/lg-thumbnail.js
 //= require html.sortable
 //= require growlyflash
-//= require redactor-rails
-//= require redactor-rails/plugins
+//= require ckeditor/init
 //= require initializer
-//= require_tree ./redactor-rails
 //= require_tree ./vendors
 //= require_tree ./modules

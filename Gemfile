@@ -47,7 +47,7 @@ gem 'image_processing'
 gem 'mini_magick'
 gem 'shrine'
 gem 'carrierwave'
-gem 'redactor-rails'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 
 # js-assets
 source 'https://rails-assets.org' do
