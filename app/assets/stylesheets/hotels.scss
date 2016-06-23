@@ -45,12 +45,12 @@
         top: 1px
     }
     .panel-body.panel-book {
-        padding-top: 6px;
-        padding-bottom: 0px;
-        background-color: #707070;
         color: #fff;
         margin-top: -1px;
-        height: 40px;
+        padding: 10px 10px 0 10px;
+        background-color: #3c3f40; 
+        border-style: hidden; 
+        height: 38px;
     }
     .price {
         position: absolute;
