@@ -75,10 +75,7 @@
                                   i.fa.fa-angle-right.fa-lg aria-hidden="true"
               .row.space-top-2
                 .col-lg-12.visible-lg-block
-                  .adsense
-                    ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8467960323308486" data-ad-slot="3552610255" data-ad-format="auto"
-                    javascript:
-                      (adsbygoogle = window.adsbygoogle || []).push({});
+                  = render 'adsense'
 
 javascript:
   var checkin = "#{(Date.current + 14).to_date.strftime('%Y-%m-%d')}" ;
