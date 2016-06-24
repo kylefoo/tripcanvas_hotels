@@ -25,17 +25,15 @@ javascript:
         - @related_articles.each do |article|
           = render partial: 'shared/article', locals: {a: article, h: @hotel}
   .row.space-top-2
-    .col-lg-8.visible-xs-block.visible-sm-block.visible-md-block
+    .col-lg-8.pull-left.visible-xs-block.visible-sm-block.visible-md-block
       .adsense
         ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8467960323308486" data-ad-slot="3552610255" data-ad-format="auto"
+        javascript:
+          (adsbygoogle = window.adsbygoogle || []).push({});
 #hotel_map
   #map style=("width: 100%;\n height: 450px;")
 
 javascript:
-  try{
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  }catch(ex){}
-  
   var geocoder, map;
 
   function initMap() {
