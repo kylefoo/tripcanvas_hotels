@@ -1,4 +1,3 @@
-= javascript_include_tag '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', async: true
 - checkin = (Date.current + 14).to_date.strftime("%Y-%m-%d")
 - checkout = (Date.current + 15).to_date.strftime("%Y-%m-%d")
 #hotel_summary.panel
@@ -74,10 +73,11 @@
                                 strong.tourplusprice Find Local Guide
                                 .arrow
                                   i.fa.fa-angle-right.fa-lg aria-hidden="true"
-
+              .row.space-top-2
+                .col-lg-8.visible-lg-block.pull-right
+                  #adsense style="height:200px;"
+                    ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8467960323308486" data-ad-slot="3552610255" data-ad-format="auto"
 javascript:
-  (adsbygoogle = window.adsbygoogle || []).push({});
-
   var checkin = "#{(Date.current + 14).to_date.strftime('%Y-%m-%d')}" ;
   var checkout = "#{(Date.current + 15).to_date.strftime('%Y-%m-%d')}" ;
   var $bookingdotcomprice = $(".bookdotcomprice");

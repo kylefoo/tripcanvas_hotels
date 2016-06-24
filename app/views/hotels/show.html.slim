@@ -1,4 +1,5 @@
 = stylesheet_link_tag 'https://indonesia.tripcanvas.co/hotels.css'
+= javascript_include_tag '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', async: true
 = render 'gallery'
 = render 'hotel_info'
 = render 'meta'
@@ -23,14 +24,18 @@ javascript:
         h4.row-space-4 Article highlights 
         - @related_articles.each do |article|
           = render partial: 'shared/article', locals: {a: article, h: @hotel}
-.row.space-top-4
-  .col-sm-12
-    #adsense 
-      ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8467960323308486" data-ad-slot="3552610255" data-ad-format="auto"
+  .row.space-top-2
+    .col-lg-8.visible-xs-block.visible-sm-block.visible-md-block
+      #adsense
+        ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8467960323308486" data-ad-slot="3552610255" data-ad-format="auto"
 #hotel_map
   #map style=("width: 100%;\n height: 450px;")
 
 javascript:
+  try{
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }catch(ex){}
+  
   var geocoder, map;
 
   function initMap() {
