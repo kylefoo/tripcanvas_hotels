@@ -26,7 +26,7 @@ javascript:
           = render partial: 'shared/article', locals: {a: article, h: @hotel}
   .row.space-top-2
     .col-lg-8.visible-xs-block.visible-sm-block.visible-md-block
-      #adsense
+      .adsense
         ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8467960323308486" data-ad-slot="3552610255" data-ad-format="auto"
 #hotel_map
   #map style=("width: 100%;\n height: 450px;")
@@ -73,7 +73,7 @@ javascript:
         //$(".fixed").removeClass('fixed').addClass("noFixed").css({'margin-top':'-40px','top':stopscroll.top-420.5 });
         $( ".subnav-item" ).attr("aria-selected", "false");
         $( ".subnav-item[id='mapButton']" ).attr("aria-selected", "true");
-        $(".noFixed").removeClass('noFixed').addClass("fixed").css({'margin-top':'-40px','top':'40px'});
+        $(".noFixed").removeClass('noFixed').addClass("fixed").css({'margin-top':'-38px','top':'40px'});
         $(".subnav").removeAttr("aria-hidden", "true").attr("aria-hidden", "false");
       } else if(y >= startscroll.top-40){
         $( ".subnav-item" ).attr("aria-selected", "false");
@@ -82,11 +82,11 @@ javascript:
           $( ".subnav-item" ).attr("aria-selected", "false");
           $( ".subnav-item[id='articleButton']" ).attr("aria-selected", "true");
         }
-        $(".noFixed").removeClass('noFixed').addClass("fixed").css({'margin-top':'-40px','top':'40px'});
+        $(".noFixed").removeClass('noFixed').addClass("fixed").css({'margin-top':'-38px','top':'40px'});
         $(".subnav").removeAttr("aria-hidden", "true").attr("aria-hidden", "false");
       } else{
         $(".subnav").removeAttr("aria-hidden", "false").attr("aria-hidden", "true");
-        $(".fixed").removeClass('fixed').addClass("noFixed").css({'margin-top':'-40px','top':'0px'});
+        $(".fixed").removeClass('fixed').addClass("noFixed").css({'margin-top':'-38px','top':'0px'});
       }
   });
 = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCyYS8b2R9ll2Zp2hXZvBCB5EUJttEHDS8&callback=initMap"
